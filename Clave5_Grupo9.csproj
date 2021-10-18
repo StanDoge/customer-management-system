@@ -46,16 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="F_enter-data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_enter-data.Designer.cs">
+      <DependentUpon>F_enter-data.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_log-in.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_log-in.Designer.cs">
       <DependentUpon>F_log-in.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_option.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_option.Designer.cs">
+      <DependentUpon>F_option.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_search-data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_search-data.Designer.cs">
+      <DependentUpon>F_search-data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F_enter-data.resx">
+      <DependentUpon>F_enter-data.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_log-in.resx">
       <DependentUpon>F_log-in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_option.resx">
+      <DependentUpon>F_option.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_search-data.resx">
+      <DependentUpon>F_search-data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

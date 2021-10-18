@@ -51,5 +51,12 @@ namespace Clave5_Grupo9
     {
       this.Close();
     }
-  }
+
+        private void BtnLogIn_Click(object sender, EventArgs e)
+        {
+            F_option opción = new F_option();
+            opción.Show();
+            Hide();
+        }
+    }
 }
