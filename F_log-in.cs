@@ -38,11 +38,30 @@ namespace Clave5_Grupo9
       this.Close();
     }
 
-        private void BtnLogIn_Click(object sender, EventArgs e)
-        {
-            F_option opción = new F_option();
-            opción.Show();
-            Hide();
-        }
+    private void BtnLogIn_Click(object sender, EventArgs e)
+    {
+
+      const string PASSWORD = "prn115";
+      const string USER = PASSWORD;
+
+      string psInserted = TbPassword.Text;
+      string usInserted = TbUser.Text;
+
+      if (!usInserted.Equals(USER)) 
+      {
+        MessageBox.Show("El usuario insertado no fue encontrado");
+        return;
+      }
+
+      if (!psInserted.Equals(PASSWORD)) 
+      {
+        MessageBox.Show("Contraseña incorrecta");
+        return;
+      }
+
+      F_option opción = new F_option();
+      opción.Show();
+      Hide();
     }
+  }
 }
