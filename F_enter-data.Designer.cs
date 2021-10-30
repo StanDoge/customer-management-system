@@ -50,10 +50,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.LblDateOfIssue = new System.Windows.Forms.Label();
             this.LblStatus = new System.Windows.Forms.Label();
             this.TbInterestRate = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.CbCardsTypes = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -256,10 +254,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.LblDateOfIssue);
             this.groupBox2.Controls.Add(this.LblStatus);
             this.groupBox2.Controls.Add(this.TbInterestRate);
-            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.CbCardsTypes);
             this.groupBox2.Controls.Add(this.label9);
@@ -270,15 +266,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Confirmación de Datos";
-            // 
-            // LblDateOfIssue
-            // 
-            this.LblDateOfIssue.AutoSize = true;
-            this.LblDateOfIssue.Location = new System.Drawing.Point(151, 157);
-            this.LblDateOfIssue.Name = "LblDateOfIssue";
-            this.LblDateOfIssue.Size = new System.Drawing.Size(80, 13);
-            this.LblDateOfIssue.TabIndex = 7;
-            this.LblDateOfIssue.Text = "LblDateOfIssue";
             // 
             // LblStatus
             // 
@@ -295,15 +282,6 @@
             this.TbInterestRate.Name = "TbInterestRate";
             this.TbInterestRate.Size = new System.Drawing.Size(121, 20);
             this.TbInterestRate.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 157);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 13);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Fecha de Emisión:";
             // 
             // label10
             // 
@@ -420,7 +398,6 @@
         private System.Windows.Forms.TextBox TbIncome;
         private System.Windows.Forms.Button BtnNew;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox CbCardsTypes;
         private System.Windows.Forms.Label label9;
@@ -429,7 +406,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker DtpDateOfBirth;
-        private System.Windows.Forms.Label LblDateOfIssue;
         private System.Windows.Forms.Label LblStatus;
         private System.Windows.Forms.TextBox TbInterestRate;
     }

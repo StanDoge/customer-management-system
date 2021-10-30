@@ -30,6 +30,7 @@
         {
             this.BtnEnter = new System.Windows.Forms.Button();
             this.BtnSearch = new System.Windows.Forms.Button();
+            this.processOptBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnEnter
@@ -52,11 +53,21 @@
             this.BtnSearch.UseVisualStyleBackColor = true;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
+            // processOptBtn
+            // 
+            this.processOptBtn.Location = new System.Drawing.Point(346, 24);
+            this.processOptBtn.Name = "processOptBtn";
+            this.processOptBtn.Size = new System.Drawing.Size(125, 50);
+            this.processOptBtn.TabIndex = 2;
+            this.processOptBtn.Text = "Procesar Tarjeta";
+            this.processOptBtn.UseVisualStyleBackColor = true;
+            // 
             // F_option
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 96);
+            this.ClientSize = new System.Drawing.Size(495, 96);
+            this.Controls.Add(this.processOptBtn);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.BtnEnter);
             this.Name = "F_option";
@@ -70,5 +81,6 @@
 
         private System.Windows.Forms.Button BtnEnter;
         private System.Windows.Forms.Button BtnSearch;
+        private System.Windows.Forms.Button processOptBtn;
     }
 }
