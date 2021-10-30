@@ -47,13 +47,13 @@ namespace Clave5_Grupo9
       string psInserted = TbPassword.Text;
       string usInserted = TbUser.Text;
 
-      if (!usInserted.Equals(USER)) 
+      if (!usInserted.Equals(USER) || string.IsNullOrEmpty(TbUser.Text)) 
       {
         MessageBox.Show("El usuario insertado no fue encontrado");
         return;
       }
 
-      if (!psInserted.Equals(PASSWORD)) 
+      if (!psInserted.Equals(PASSWORD) || string.IsNullOrEmpty(TbPassword.Text))  
       {
         MessageBox.Show("Contraseña incorrecta");
         return;

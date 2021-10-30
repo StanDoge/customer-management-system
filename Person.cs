@@ -8,11 +8,10 @@ namespace Clave5_Grupo9
 {
   abstract class Person
   {
-    string firstName;
-    string lastName;
+    string fullName;
     int DUI;
     string address;
-    int age;
+    string birthday;
     int phoneNumber;
   }
 }

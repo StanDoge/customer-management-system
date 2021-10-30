@@ -8,9 +8,9 @@ namespace Clave5_Grupo9
 {
   class Customer:Person
   {
-    string workPlace;
-    double totalIncome;
-    bool state;
-    Card openning;
+    public string workPlace;
+    public double totalIncome;
+    public bool state;
+    public Card openning;
   }
 }
