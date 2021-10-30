@@ -15,9 +15,9 @@ namespace Clave5_Grupo9
 
   class Card
   {
-    double cardLimit;
-    double interestRate;
-    DateTime date;
-    cardTypes card;
+    public double cardLimit;
+    public double interestRate;
+    public DateTime date;
+    public cardTypes card;
   }
 }
