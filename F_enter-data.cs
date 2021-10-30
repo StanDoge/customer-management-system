@@ -17,11 +17,6 @@ namespace Clave5_Grupo9
       InitializeComponent();
     }
 
-    private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
-
     private void BtnAdd_Click(object sender, EventArgs e)
     {
       //creacion del objeto cliente sobre el que estaremos trabajando, este tienen todos los atributos que necesitamos
