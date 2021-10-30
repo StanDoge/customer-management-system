@@ -57,7 +57,7 @@
             this.BtnOpenCard = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.TxtInterestRate = new System.Windows.Forms.TextBox();
             this.LblStatus = new System.Windows.Forms.Label();
             this.LblDateOfIssue = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.DtpDateOfBirth);
             this.groupBox1.Controls.Add(this.BtnNew);
             this.groupBox1.Controls.Add(this.BtnAdd);
             this.groupBox1.Controls.Add(this.TxtOtherIncome);
@@ -339,12 +339,12 @@
     "gos respectivos de dicha tarjeta.";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dateTimePicker1
+            // DtpDateOfBirth
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(123, 168);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(318, 20);
-            this.dateTimePicker1.TabIndex = 23;
+            this.DtpDateOfBirth.Location = new System.Drawing.Point(123, 168);
+            this.DtpDateOfBirth.Name = "DtpDateOfBirth";
+            this.DtpDateOfBirth.Size = new System.Drawing.Size(318, 20);
+            this.DtpDateOfBirth.TabIndex = 23;
             // 
             // TxtInterestRate
             // 
@@ -423,7 +423,7 @@
         private System.Windows.Forms.Button BtnOpenCard;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DtpDateOfBirth;
         private System.Windows.Forms.Label LblDateOfIssue;
         private System.Windows.Forms.Label LblStatus;
         private System.Windows.Forms.TextBox TxtInterestRate;
