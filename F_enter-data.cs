@@ -33,7 +33,8 @@ namespace Clave5_Grupo9
           if (defaultCustomer.totalIncome >= 400)
           {
             defaultCustomer.state = true;
-            MessageBox.Show("Tu estado es true");
+            //defaultCustomer.openning = new Card(1000, 0.39, cardTypes.azul);
+            //MessageBox.Show(defaultCustomer.openning.date.ToString());
           }
           else
           {
