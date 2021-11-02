@@ -31,7 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.BtnNew = new System.Windows.Forms.Button();
-            this.BtnAdd = new System.Windows.Forms.Button();
+            this.BtnConfirm = new System.Windows.Forms.Button();
             this.TbOtherIncome = new System.Windows.Forms.TextBox();
             this.TbIncome = new System.Windows.Forms.TextBox();
             this.TbWorkPlace = new System.Windows.Forms.TextBox();
@@ -50,27 +50,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.LblDateOfIssue = new System.Windows.Forms.Label();
             this.LblStatus = new System.Windows.Forms.Label();
             this.TbInterestRate = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.CbCardsTypes = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.BtnOpenCard = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.DtpDateOfBirth);
-            this.groupBox1.Controls.Add(this.BtnNew);
-            this.groupBox1.Controls.Add(this.BtnAdd);
             this.groupBox1.Controls.Add(this.TbOtherIncome);
             this.groupBox1.Controls.Add(this.TbIncome);
             this.groupBox1.Controls.Add(this.TbWorkPlace);
@@ -90,7 +82,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(458, 355);
+            this.groupBox1.Size = new System.Drawing.Size(460, 325);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
@@ -104,22 +96,22 @@
             // 
             // BtnNew
             // 
-            this.BtnNew.Location = new System.Drawing.Point(341, 322);
+            this.BtnNew.Location = new System.Drawing.Point(364, 422);
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(100, 23);
             this.BtnNew.TabIndex = 22;
             this.BtnNew.Text = "Nuevo Cliente";
             this.BtnNew.UseVisualStyleBackColor = true;
             // 
-            // BtnAdd
+            // BtnConfirm
             // 
-            this.BtnAdd.Location = new System.Drawing.Point(229, 322);
-            this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(100, 23);
-            this.BtnAdd.TabIndex = 21;
-            this.BtnAdd.Text = "Confirmar Datos";
-            this.BtnAdd.UseVisualStyleBackColor = true;
-            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            this.BtnConfirm.Location = new System.Drawing.Point(364, 380);
+            this.BtnConfirm.Name = "BtnConfirm";
+            this.BtnConfirm.Size = new System.Drawing.Size(100, 23);
+            this.BtnConfirm.TabIndex = 21;
+            this.BtnConfirm.Text = "Confirmar Datos";
+            this.BtnConfirm.UseVisualStyleBackColor = true;
+            this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // TbOtherIncome
             // 
@@ -151,14 +143,14 @@
             // 
             // TbCity
             // 
-            this.TbCity.Location = new System.Drawing.Point(291, 132);
+            this.TbCity.Location = new System.Drawing.Point(123, 132);
             this.TbCity.Name = "TbCity";
-            this.TbCity.Size = new System.Drawing.Size(150, 20);
+            this.TbCity.Size = new System.Drawing.Size(318, 20);
             this.TbCity.TabIndex = 12;
             // 
             // TbNeighborhood
             // 
-            this.TbNeighborhood.Location = new System.Drawing.Point(123, 132);
+            this.TbNeighborhood.Location = new System.Drawing.Point(291, 95);
             this.TbNeighborhood.Name = "TbNeighborhood";
             this.TbNeighborhood.Size = new System.Drawing.Size(150, 20);
             this.TbNeighborhood.TabIndex = 11;
@@ -167,7 +159,7 @@
             // 
             this.TbHouse.Location = new System.Drawing.Point(123, 95);
             this.TbHouse.Name = "TbHouse";
-            this.TbHouse.Size = new System.Drawing.Size(318, 20);
+            this.TbHouse.Size = new System.Drawing.Size(150, 20);
             this.TbHouse.TabIndex = 10;
             // 
             // TbID
@@ -256,34 +248,23 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.LblDateOfIssue);
             this.groupBox2.Controls.Add(this.LblStatus);
             this.groupBox2.Controls.Add(this.TbInterestRate);
-            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.CbCardsTypes);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(478, 13);
+            this.groupBox2.Location = new System.Drawing.Point(12, 344);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(296, 192);
+            this.groupBox2.Size = new System.Drawing.Size(318, 131);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Confirmación de Datos";
             // 
-            // LblDateOfIssue
-            // 
-            this.LblDateOfIssue.AutoSize = true;
-            this.LblDateOfIssue.Location = new System.Drawing.Point(151, 157);
-            this.LblDateOfIssue.Name = "LblDateOfIssue";
-            this.LblDateOfIssue.Size = new System.Drawing.Size(80, 13);
-            this.LblDateOfIssue.TabIndex = 7;
-            this.LblDateOfIssue.Text = "LblDateOfIssue";
-            // 
             // LblStatus
             // 
             this.LblStatus.AutoSize = true;
-            this.LblStatus.Location = new System.Drawing.Point(151, 26);
+            this.LblStatus.Location = new System.Drawing.Point(151, 105);
             this.LblStatus.Name = "LblStatus";
             this.LblStatus.Size = new System.Drawing.Size(51, 13);
             this.LblStatus.TabIndex = 6;
@@ -291,24 +272,15 @@
             // 
             // TbInterestRate
             // 
-            this.TbInterestRate.Location = new System.Drawing.Point(154, 108);
+            this.TbInterestRate.Location = new System.Drawing.Point(154, 63);
             this.TbInterestRate.Name = "TbInterestRate";
-            this.TbInterestRate.Size = new System.Drawing.Size(121, 20);
+            this.TbInterestRate.Size = new System.Drawing.Size(150, 20);
             this.TbInterestRate.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 157);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 13);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Fecha de Emisión:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 111);
+            this.label10.Location = new System.Drawing.Point(6, 66);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(131, 13);
             this.label10.TabIndex = 3;
@@ -321,15 +293,15 @@
             "Azul",
             "Dorada",
             "Platino"});
-            this.CbCardsTypes.Location = new System.Drawing.Point(154, 63);
+            this.CbCardsTypes.Location = new System.Drawing.Point(154, 23);
             this.CbCardsTypes.Name = "CbCardsTypes";
-            this.CbCardsTypes.Size = new System.Drawing.Size(121, 21);
+            this.CbCardsTypes.Size = new System.Drawing.Size(150, 21);
             this.CbCardsTypes.TabIndex = 2;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 66);
+            this.label9.Location = new System.Drawing.Point(6, 26);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(142, 13);
             this.label9.TabIndex = 1;
@@ -338,52 +310,21 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 26);
+            this.label8.Location = new System.Drawing.Point(6, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Estado del Cliente:";
             // 
-            // BtnOpenCard
-            // 
-            this.BtnOpenCard.Location = new System.Drawing.Point(68, 114);
-            this.BtnOpenCard.Name = "BtnOpenCard";
-            this.BtnOpenCard.Size = new System.Drawing.Size(160, 27);
-            this.BtnOpenCard.TabIndex = 5;
-            this.BtnOpenCard.Text = "Abrir Tarjeta";
-            this.BtnOpenCard.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.BtnOpenCard);
-            this.groupBox3.Location = new System.Drawing.Point(478, 211);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(296, 157);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Apertura";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 20);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(268, 52);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Al presionar este botón, el cliente acepta los términos y \r\ncondiciones impuestas" +
-    " según los datos que ha \r\nproporcionado al sistema y aceptó cumplir con los \r\npa" +
-    "gos respectivos de dicha tarjeta.";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // F_enter_data
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 384);
-            this.Controls.Add(this.groupBox3);
+            this.ClientSize = new System.Drawing.Size(485, 489);
+            this.Controls.Add(this.BtnNew);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.BtnConfirm);
             this.Name = "F_enter_data";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar Datos";
@@ -391,8 +332,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -415,21 +354,16 @@
         private System.Windows.Forms.TextBox TbID;
         private System.Windows.Forms.TextBox TbLastName;
         private System.Windows.Forms.TextBox TbFirstName;
-        private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.Button BtnConfirm;
         private System.Windows.Forms.TextBox TbOtherIncome;
         private System.Windows.Forms.TextBox TbIncome;
         private System.Windows.Forms.Button BtnNew;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox CbCardsTypes;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button BtnOpenCard;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker DtpDateOfBirth;
-        private System.Windows.Forms.Label LblDateOfIssue;
         private System.Windows.Forms.Label LblStatus;
         private System.Windows.Forms.TextBox TbInterestRate;
     }
