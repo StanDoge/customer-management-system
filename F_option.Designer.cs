@@ -30,6 +30,7 @@
         {
             this.BtnEnter = new System.Windows.Forms.Button();
             this.BtnSearch = new System.Windows.Forms.Button();
+            this.btnProcess = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnEnter
@@ -52,11 +53,21 @@
             this.BtnSearch.UseVisualStyleBackColor = true;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
+            // btnProcess
+            // 
+            this.btnProcess.Location = new System.Drawing.Point(346, 24);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(125, 50);
+            this.btnProcess.TabIndex = 2;
+            this.btnProcess.Text = "Procesar tarjetas";
+            this.btnProcess.UseVisualStyleBackColor = true;
+            // 
             // F_option
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 96);
+            this.ClientSize = new System.Drawing.Size(504, 96);
+            this.Controls.Add(this.btnProcess);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.BtnEnter);
             this.Name = "F_option";
@@ -70,5 +81,6 @@
 
         private System.Windows.Forms.Button BtnEnter;
         private System.Windows.Forms.Button BtnSearch;
+        private System.Windows.Forms.Button btnProcess;
     }
 }

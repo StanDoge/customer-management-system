@@ -48,6 +48,17 @@
   <ItemGroup>
     <Compile Include="Card.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="dsPruebadb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPruebadb.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="F_process-cards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_process-cards.Designer.cs">
+      <DependentUpon>F_process-cards.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_enter-data.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +96,9 @@
     <EmbeddedResource Include="F_option.resx">
       <DependentUpon>F_option.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_process-cards.resx">
+      <DependentUpon>F_process-cards.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_search-data.resx">
       <DependentUpon>F_search-data.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +111,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="dsPruebadb.xsc">
+      <DependentUpon>dsPruebadb.xsd</DependentUpon>
+    </None>
+    <None Include="dsPruebadb.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPruebadb.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsPruebadb.xss">
+      <DependentUpon>dsPruebadb.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
