@@ -23,6 +23,8 @@ namespace Clave5_Grupo9
 
     }
 
+
+
     private void TbInput_TextChanged(object sender, EventArgs e)
     {
 
@@ -33,10 +35,7 @@ namespace Clave5_Grupo9
 
     }
 
-    private void BtnExit_Click(object sender, EventArgs e)
-    {
-      this.Close();
-    }
+    
 
     private void BtnLogIn_Click(object sender, EventArgs e)
     {
@@ -63,5 +62,15 @@ namespace Clave5_Grupo9
       opción.Show();
       Hide();
     }
-  }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+       
+
+    }
 }
