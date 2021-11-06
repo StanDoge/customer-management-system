@@ -119,6 +119,7 @@
             this.dtpToSearch.Name = "dtpToSearch";
             this.dtpToSearch.Size = new System.Drawing.Size(136, 20);
             this.dtpToSearch.TabIndex = 9;
+            this.dtpToSearch.CloseUp += new System.EventHandler(this.dtpToSearch_CloseUp);
             this.dtpToSearch.ValueChanged += new System.EventHandler(this.dtpToSearch_ValueChanged);
             // 
             // label6
@@ -178,7 +179,7 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnClear.Location = new System.Drawing.Point(128, 377);
+            this.btnClear.Location = new System.Drawing.Point(172, 377);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(94, 33);
             this.btnClear.TabIndex = 13;

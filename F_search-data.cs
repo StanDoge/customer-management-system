@@ -59,7 +59,16 @@ namespace Clave5_Grupo9
 
             btnSearch.Enabled = true;
             btnClear.Enabled = true;
+
+           
         }
+
+
+        //Validar que fecha from sea menor que to
+        
+
+
+
 
         private void dtpFromSearch_ValueChanged(object sender, EventArgs e)
         {
@@ -67,6 +76,7 @@ namespace Clave5_Grupo9
 
             btnSearch.Enabled = true;
             btnClear.Enabled = true;
+
         }
 
         private void dtpToSearch_ValueChanged(object sender, EventArgs e)
@@ -106,6 +116,20 @@ namespace Clave5_Grupo9
             F_option opción = new F_option();
             opción.Show();
             Hide();
+        }
+
+
+        //Valida que el rango de fechas sea correcto
+        private void dtpToSearch_CloseUp(object sender, EventArgs e)
+        {
+            DateTime a = Convert.ToDateTime(dtpFromSearch.Text);
+            DateTime b = Convert.ToDateTime(dtpToSearch.Text);
+
+            if (a >=b)
+            {
+                MessageBox.Show("La fecha \"Hasta\" debe ser menor que \"Desde\"", "Rango de fecha incorrecto",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
