@@ -35,14 +35,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateFromSearch = new System.Windows.Forms.DateTimePicker();
-            this.dateToSearch = new System.Windows.Forms.DateTimePicker();
+            this.dtpFromSearch = new System.Windows.Forms.DateTimePicker();
+            this.dtpToSearch = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxStatusSearch = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbxStatus = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,8 +58,9 @@
             // 
             this.tbxNameSearch.Location = new System.Drawing.Point(33, 51);
             this.tbxNameSearch.Name = "tbxNameSearch";
-            this.tbxNameSearch.Size = new System.Drawing.Size(256, 20);
+            this.tbxNameSearch.Size = new System.Drawing.Size(297, 20);
             this.tbxNameSearch.TabIndex = 1;
+            this.tbxNameSearch.TextChanged += new System.EventHandler(this.tbxNameSearch_TextChanged);
             // 
             // label2
             // 
@@ -74,8 +75,9 @@
             this.cbxCardTypeSearch.FormattingEnabled = true;
             this.cbxCardTypeSearch.Location = new System.Drawing.Point(33, 111);
             this.cbxCardTypeSearch.Name = "cbxCardTypeSearch";
-            this.cbxCardTypeSearch.Size = new System.Drawing.Size(270, 21);
+            this.cbxCardTypeSearch.Size = new System.Drawing.Size(297, 21);
             this.cbxCardTypeSearch.TabIndex = 4;
+            this.cbxCardTypeSearch.SelectedIndexChanged += new System.EventHandler(this.cbxCardTypeSearch_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -101,19 +103,22 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Desde";
             // 
-            // dateFromSearch
+            // dtpFromSearch
             // 
-            this.dateFromSearch.Location = new System.Drawing.Point(33, 190);
-            this.dateFromSearch.Name = "dateFromSearch";
-            this.dateFromSearch.Size = new System.Drawing.Size(136, 20);
-            this.dateFromSearch.TabIndex = 8;
+            this.dtpFromSearch.Location = new System.Drawing.Point(33, 190);
+            this.dtpFromSearch.Name = "dtpFromSearch";
+            this.dtpFromSearch.Size = new System.Drawing.Size(136, 20);
+            this.dtpFromSearch.TabIndex = 8;
+            this.dtpFromSearch.ValueChanged += new System.EventHandler(this.dtpFromSearch_ValueChanged);
             // 
-            // dateToSearch
+            // dtpToSearch
             // 
-            this.dateToSearch.Location = new System.Drawing.Point(194, 190);
-            this.dateToSearch.Name = "dateToSearch";
-            this.dateToSearch.Size = new System.Drawing.Size(136, 20);
-            this.dateToSearch.TabIndex = 9;
+            this.dtpToSearch.AllowDrop = true;
+            this.dtpToSearch.Location = new System.Drawing.Point(194, 190);
+            this.dtpToSearch.Name = "dtpToSearch";
+            this.dtpToSearch.Size = new System.Drawing.Size(136, 20);
+            this.dtpToSearch.TabIndex = 9;
+            this.dtpToSearch.ValueChanged += new System.EventHandler(this.dtpToSearch_ValueChanged);
             // 
             // label6
             // 
@@ -125,10 +130,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbxStatus);
+            this.groupBox1.Controls.Add(this.cbxStatusSearch);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.dateToSearch);
-            this.groupBox1.Controls.Add(this.dateFromSearch);
+            this.groupBox1.Controls.Add(this.dtpToSearch);
+            this.groupBox1.Controls.Add(this.dtpFromSearch);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -142,23 +147,14 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
-            // btnSearch
+            // cbxStatusSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(311, 377);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(94, 33);
-            this.btnSearch.TabIndex = 12;
-            this.btnSearch.Text = "Buscar";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(28, 377);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(94, 33);
-            this.btnClear.TabIndex = 13;
-            this.btnClear.Text = "Limpiar todo";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.cbxStatusSearch.FormattingEnabled = true;
+            this.cbxStatusSearch.Location = new System.Drawing.Point(33, 260);
+            this.cbxStatusSearch.Name = "cbxStatusSearch";
+            this.cbxStatusSearch.Size = new System.Drawing.Size(297, 21);
+            this.cbxStatusSearch.TabIndex = 11;
+            this.cbxStatusSearch.SelectedIndexChanged += new System.EventHandler(this.cbxStatusSearch_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -168,13 +164,24 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Estado";
             // 
-            // cbxStatus
+            // btnSearch
             // 
-            this.cbxStatus.FormattingEnabled = true;
-            this.cbxStatus.Location = new System.Drawing.Point(33, 260);
-            this.cbxStatus.Name = "cbxStatus";
-            this.cbxStatus.Size = new System.Drawing.Size(270, 21);
-            this.cbxStatus.TabIndex = 11;
+            this.btnSearch.Location = new System.Drawing.Point(311, 377);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(94, 33);
+            this.btnSearch.TabIndex = 12;
+            this.btnSearch.Text = "Buscar";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(28, 377);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(94, 33);
+            this.btnClear.TabIndex = 13;
+            this.btnClear.Text = "Limpiar todo";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // F_search_data
             // 
@@ -188,6 +195,7 @@
             this.Name = "F_search_data";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos de Búsqueda";
+            this.Load += new System.EventHandler(this.F_search_data_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -203,11 +211,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateFromSearch;
-        private System.Windows.Forms.DateTimePicker dateToSearch;
+        private System.Windows.Forms.DateTimePicker dtpFromSearch;
+        private System.Windows.Forms.DateTimePicker dtpToSearch;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbxStatus;
+        private System.Windows.Forms.ComboBox cbxStatusSearch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClear;
