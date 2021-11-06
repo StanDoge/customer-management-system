@@ -88,13 +88,12 @@ namespace Clave5_Grupo9
       }
       defaultCustomer.totalIncome = double.Parse(TbIncome.Text) + double.Parse(TbOtherIncome.Text);
 
-      //SUPUESTA VALIDACIÓN DEL TEXTBOX DE INTERES QUE NO FUNCIONA
-      //number = double.TryParse(TbInterestRate.Text, out addInterest);
-      //if (!number || string.IsNullOrEmpty(TbInterestRate.Text) || Convert.ToDouble(TbInterestRate.Text) < 0.30 || Convert.ToDouble(TbInterestRate.Text) > 0.40)  
-      //{
-      //  MessageBox.Show("La tasa de interés no es válida o el campo se encuntra vacío");
-      //  return;
-      //}
+      number = double.TryParse(TbInterestRate.Text, out addInterest);
+      if (!number || string.IsNullOrEmpty(TbInterestRate.Text) || Convert.ToDouble(TbInterestRate.Text) < 0.30 || Convert.ToDouble(TbInterestRate.Text) > 0.40)  
+      {
+        MessageBox.Show("La tasa de interés no es válida o el campo se encuntra vacío");
+        return;
+      }
 
             int indexOfSelections = CbCardsTypes.SelectedIndex;
 
