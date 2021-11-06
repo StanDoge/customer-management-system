@@ -53,12 +53,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPruebadb.xsd</DependentUpon>
     </Compile>
-    <Compile Include="F_process-cards.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F_process-cards.Designer.cs">
-      <DependentUpon>F_process-cards.cs</DependentUpon>
-    </Compile>
     <Compile Include="F_enter-data.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,9 +89,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_option.resx">
       <DependentUpon>F_option.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="F_process-cards.resx">
-      <DependentUpon>F_process-cards.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_search-data.resx">
       <DependentUpon>F_search-data.cs</DependentUpon>

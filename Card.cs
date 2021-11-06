@@ -17,14 +17,15 @@ namespace Clave5_Grupo9
   {
     public double cardLimit;
     public double interestRate;
-    public DateTime date;
+    public string date;
     public cardTypes card;
 
     public Card(double limit,double interest, cardTypes type )
     {
       cardLimit = limit;
       interestRate = interest;
-      date = DateTime.Today;
+      //asignacion del formato ISO en la fecha para evitar conflictos con la BD
+      date = DateTime.Now.ToString("yyyy-MM-dd");
       card = type;
     }
   }
