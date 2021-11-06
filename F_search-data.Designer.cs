@@ -43,6 +43,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.Volver = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -176,18 +177,32 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(28, 377);
+            this.btnClear.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnClear.Location = new System.Drawing.Point(128, 377);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(94, 33);
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "Limpiar todo";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // Volver
+            // 
+            this.Volver.BackColor = System.Drawing.SystemColors.Menu;
+            this.Volver.Location = new System.Drawing.Point(28, 377);
+            this.Volver.Name = "Volver";
+            this.Volver.Size = new System.Drawing.Size(94, 33);
+            this.Volver.TabIndex = 14;
+            this.Volver.Text = "Volver atrás";
+            this.Volver.UseVisualStyleBackColor = false;
+            this.Volver.Click += new System.EventHandler(this.Volver_Click);
             // 
             // F_search_data
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 435);
+            this.Controls.Add(this.Volver);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.groupBox1);
@@ -219,5 +234,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button Volver;
     }
 }

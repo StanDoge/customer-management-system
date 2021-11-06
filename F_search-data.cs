@@ -79,6 +79,8 @@ namespace Clave5_Grupo9
             btnClear.Enabled = true;
         }
 
+
+        //valida que haya al menos un campo con datos
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (nameSearch
@@ -90,6 +92,20 @@ namespace Clave5_Grupo9
                 MessageBox.Show("Por favor ingrese un valor", "Campos vacios",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+
+        //limpiar todos los campos
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Volver_Click(object sender, EventArgs e)
+        {
+            F_option opción = new F_option();
+            opción.Show();
+            Hide();
         }
     }
 }
