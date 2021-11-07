@@ -40,6 +40,8 @@ namespace Clave5_Grupo9
             btnSearch.Enabled = true;
             btnClear.Enabled = true;
 
+            
+
         }
 
        
@@ -47,6 +49,7 @@ namespace Clave5_Grupo9
         private void cbxCardTypeSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             cardTypeSearch = cbxCardTypeSearch.SelectedItem.ToString();
+
             
 
             btnSearch.Enabled = true;
@@ -61,13 +64,7 @@ namespace Clave5_Grupo9
             btnClear.Enabled = true;
 
            
-        }
-
-
-        //Validar que fecha from sea menor que to
-        
-
-
+        }  
 
 
         private void dtpFromSearch_ValueChanged(object sender, EventArgs e)
@@ -127,8 +124,16 @@ namespace Clave5_Grupo9
 
             if (a >=b)
             {
-                MessageBox.Show("La fecha \"Hasta\" debe ser menor que \"Desde\"", "Rango de fecha incorrecto",
+                MessageBox.Show("La fecha \"Hasta\" debe ser mayor que \"Desde\"", "Rango de fecha incorrecto",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (a <= b)
+                {
+                    MessageBox.Show("La fecha \"Desde\" debe ser menor que \"Hasta\"", "Rango de fecha incorrecto",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
     }

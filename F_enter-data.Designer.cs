@@ -132,7 +132,7 @@
             // 
             // TbCity
             // 
-            this.TbCity.Location = new System.Drawing.Point(123, 132);
+            this.TbCity.Location = new System.Drawing.Point(118, 132);
             this.TbCity.Name = "TbCity";
             this.TbCity.Size = new System.Drawing.Size(318, 20);
             this.TbCity.TabIndex = 12;
@@ -284,9 +284,9 @@
             this.LblStatus.AutoSize = true;
             this.LblStatus.Location = new System.Drawing.Point(151, 105);
             this.LblStatus.Name = "LblStatus";
-            this.LblStatus.Size = new System.Drawing.Size(51, 13);
+            this.LblStatus.Size = new System.Drawing.Size(36, 13);
             this.LblStatus.TabIndex = 6;
-            this.LblStatus.Text = "LblStatus";
+            this.LblStatus.Text = "Vacío";
             // 
             // TbInterestRate
             // 

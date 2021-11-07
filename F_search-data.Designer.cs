@@ -74,6 +74,10 @@
             // cbxCardTypeSearch
             // 
             this.cbxCardTypeSearch.FormattingEnabled = true;
+            this.cbxCardTypeSearch.Items.AddRange(new object[] {
+            "Azul",
+            "Dorado",
+            "Platino"});
             this.cbxCardTypeSearch.Location = new System.Drawing.Point(33, 111);
             this.cbxCardTypeSearch.Name = "cbxCardTypeSearch";
             this.cbxCardTypeSearch.Size = new System.Drawing.Size(297, 21);
@@ -152,6 +156,9 @@
             // cbxStatusSearch
             // 
             this.cbxStatusSearch.FormattingEnabled = true;
+            this.cbxStatusSearch.Items.AddRange(new object[] {
+            "Aprobada",
+            "Denegada"});
             this.cbxStatusSearch.Location = new System.Drawing.Point(33, 260);
             this.cbxStatusSearch.Name = "cbxStatusSearch";
             this.cbxStatusSearch.Size = new System.Drawing.Size(297, 21);
