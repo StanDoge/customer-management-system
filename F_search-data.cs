@@ -32,41 +32,6 @@ namespace Clave5_Grupo9
         }
 
 
-     
-
-        private void tbxNameSearch_TextChanged(object sender, EventArgs e)
-        {
-            nameSearch = tbxNameSearch.Text;
-            btnSearch.Enabled = true;
-            btnClear.Enabled = true;
-
-            
-
-        }
-
-       
-
-        private void cbxCardTypeSearch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cardTypeSearch = cbxCardTypeSearch.SelectedItem.ToString();
-
-            
-
-            btnSearch.Enabled = true;
-            btnClear.Enabled = true;
-        }
-
-        private void cbxStatusSearch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            statusSearch = cbxStatusSearch.SelectedItem.ToString();
-
-            btnSearch.Enabled = true;
-            btnClear.Enabled = true;
-
-           
-        }  
-
-
         private void dtpFromSearch_ValueChanged(object sender, EventArgs e)
         {
             dateFromSearch = dtpFromSearch.Value.Date.ToShortTimeString();
