@@ -151,6 +151,26 @@ namespace Clave5_Grupo9
           break;
       }
 
+    }
+
+        private void BtnNew_Click(object sender, EventArgs e)
+        {
+            TbFirstName.ResetText();
+            TbLastName.ResetText();
+            TbID.Clear();
+            TbHouse.ResetText();
+            TbNeighborhood.ResetText();
+            TbCity.ResetText();
+            DtpDateOfBirth.ResetText();
+            TbPhone.Clear();
+            TbWorkPlace.ResetText();
+            TbIncome.ResetText();
+            TbOtherIncome.ResetText();
+            CbCardsTypes.ResetText();
+            TbInterestRate.Clear();
+            LblStatus.ResetText();
+        }
+    }
             double ingresoTotal;
             ingresoTotal = Convert.ToDouble(TbIncome.Text) + Convert.ToDouble(TbOtherIncome.Text);
 

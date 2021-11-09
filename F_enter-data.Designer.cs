@@ -254,6 +254,7 @@
             this.BtnNew.TabIndex = 22;
             this.BtnNew.Text = "Nuevo Cliente";
             this.BtnNew.UseVisualStyleBackColor = true;
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // BtnConfirm
             // 
