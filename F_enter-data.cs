@@ -121,12 +121,12 @@ namespace Clave5_Grupo9
         case 0:
           if (defaultCustomer.totalIncome >= 400)
           {
-            defaultCustomer.state = true;
+            defaultCustomer.state = 1;
             defaultCustomer.openning = new Card(400, Double.Parse(TbInterestRate.Text), cardTypes.azul);
             //defaultCustomer.openning.interestRate
             LblStatus.Text = "Aprobado";
             limit =400;
-            if (defaultCustomer.state)
+            if (defaultCustomer.state == 1)
             {
               sendData();
               MessageBox.Show("mande la funcion");
@@ -141,11 +141,15 @@ namespace Clave5_Grupo9
         case 1:
           if (defaultCustomer.totalIncome > 500)
           {
-            defaultCustomer.state = true;
+            defaultCustomer.state = 1;
             defaultCustomer.openning = new Card(600, Double.Parse(TbInterestRate.Text), cardTypes.dorado);
-            sendData();
             LblStatus.Text = "Aprobado";
             limit = 600;
+            if (defaultCustomer.state == 1)
+            {
+              sendData();
+              MessageBox.Show("mande la funcion");
+            }
           }
           else
           {
@@ -156,11 +160,16 @@ namespace Clave5_Grupo9
         case 2:
           if (defaultCustomer.totalIncome > 700)
           {
-            defaultCustomer.state = true;
+            defaultCustomer.state = 1;
             defaultCustomer.openning = new Card(1000, Double.Parse(TbInterestRate.Text), cardTypes.platino);
             sendData();
             LblStatus.Text = "Aprobado";
             limit = 1000;
+            if (defaultCustomer.state == 1)
+            {
+              sendData();
+              MessageBox.Show("mande la funcion");
+            }
           }
           else
           {

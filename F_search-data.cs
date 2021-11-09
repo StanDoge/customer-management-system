@@ -113,8 +113,6 @@ namespace Clave5_Grupo9
       }
     }
 
-
-
     //limpiar todos los campos
     private void btnClear_Click(object sender, EventArgs e)
     {
