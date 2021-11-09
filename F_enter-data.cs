@@ -34,7 +34,7 @@ namespace Clave5_Grupo9
       defaultCustomer.address = TbHouse.Text + TbNeighborhood.Text + TbCity.Text;
       defaultCustomer.birthday = DtpDateOfBirth.Value.Date.ToString("yyyy-MM-dd");
       defaultCustomer.workPlace = TbWorkPlace.Text;
-      defaultCustomer.DUI = Convert.ToInt32(TbID.Text);
+      defaultCustomer.DUI = int.Parse((TbID.Text));
 
       //Validación de entradas en los textbox para impedir que queden vacios y donde deban ir números solo acepte números.
       int indexOfSelections = CbCardsTypes.SelectedIndex;
@@ -107,7 +107,7 @@ namespace Clave5_Grupo9
       switch (indexOfSelections)
       {
         case 0:
-          if (defaultCustomer.totalIncome >= 400)
+          if (defaultCustomer.totalIncome >= 400 && defaultCustomer.totalIncome <= 500)
           {
             defaultCustomer.state = 1;
             defaultCustomer.openning = new Card(400, Double.Parse(TbInterestRate.Text), cardTypes.azul);
@@ -125,7 +125,7 @@ namespace Clave5_Grupo9
           }
           break;
         case 1:
-          if (defaultCustomer.totalIncome > 500)
+          if (defaultCustomer.totalIncome > 500 && defaultCustomer.totalIncome <= 700)
           {
             defaultCustomer.state = 1;
             defaultCustomer.openning = new Card(600, Double.Parse(TbInterestRate.Text), cardTypes.dorado);
@@ -170,7 +170,7 @@ namespace Clave5_Grupo9
       F_Confirm.trabajo = defaultCustomer.workPlace;
       F_Confirm.ingresos = defaultCustomer.totalIncome;
       F_Confirm.estado = defaultCustomer.state;
-      F_Confirm.tipotarj = Convert.ToString( defaultCustomer.openning.card);
+      F_Confirm.tipotarj = defaultCustomer.openning.card.ToString();
       F_Confirm.tarjlim = defaultCustomer.openning.cardLimit;
       F_Confirm.interes = defaultCustomer.openning.interestRate;
 
