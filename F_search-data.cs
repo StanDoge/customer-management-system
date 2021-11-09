@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Clave5_Grupo9
 {
@@ -130,10 +131,58 @@ namespace Clave5_Grupo9
             Hide();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void btnGetAll_Click(object sender, EventArgs e)
+        { 
+            //Inicializa una nueva instancia de la clase MySqlCommand.
+            MySqlCommand consulta = new MySqlCommand();
+            Form1.conexionBD.Open(); //se abre la conexion de la variable global declara en la parte superior del formulario
+            //Instancia para conexión a MySQL, recibe la cadena de conexión
+            consulta.Connection = Form1.conexionBD;
+            consulta.CommandText = (" select* from customers  JOIN openings ON customers.customer_id=openings.customer_id  JOIN cards ON customers.customer_id=cards.customer_id; ");
+
+            //"CREATE TEMPORARY TABLE temp_searchResult AS SELECT * FROM select* from customers  JOIN openings ON customers.customer_id=openings.customer_id  JOIN cards ON customers.customer_id=cards.customer_id;"
+            //+ "ALTER TABLE temp_searchResult DROP COLUMN openings.customer_id;"
+            //+ "SELECT* FROM temp_searchResult; ")
+
+            try
+            {
+                //Inicializa una nueva instancia de la clase MySqlDataAdapter con
+                // el MySqlCommand especificado como propiedad SelectCommand.
+                MySqlDataAdapter adaptadorMySQL = new MySqlDataAdapter();
+                adaptadorMySQL.SelectCommand = consulta;
+                DataTable tabla = new DataTable();
+                adaptadorMySQL.Fill(tabla);
+                dgSearch.DataSource = tabla;
+            }
+            catch
+            {
+            }
+            finally
+            {
+                Form1.conexionBD.Close();
+            }
+        }
+
+        private void comprobarConexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+            try
+            {
+                Form1.conexionBD.Open(); //se abre la conexion de la variable global declara en la parte superior del formulario
+            MessageBox.Show("Conexión exitosa!");// se manda un mensaje de estado deconexion
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+            finally
+            {
+                Form1.conexionBD.Close(); // se cierra la conexion
+            }
+            
 
         }
     }
-    
 }
+    
+

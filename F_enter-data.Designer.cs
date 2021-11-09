@@ -56,6 +56,7 @@
             this.CbCardsTypes = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -247,7 +248,7 @@
             // 
             // BtnNew
             // 
-            this.BtnNew.Location = new System.Drawing.Point(364, 422);
+            this.BtnNew.Location = new System.Drawing.Point(364, 410);
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(100, 23);
             this.BtnNew.TabIndex = 22;
@@ -256,7 +257,7 @@
             // 
             // BtnConfirm
             // 
-            this.BtnConfirm.Location = new System.Drawing.Point(364, 380);
+            this.BtnConfirm.Location = new System.Drawing.Point(364, 370);
             this.BtnConfirm.Name = "BtnConfirm";
             this.BtnConfirm.Size = new System.Drawing.Size(100, 23);
             this.BtnConfirm.TabIndex = 21;
@@ -335,11 +336,22 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Estado del Cliente:";
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(364, 454);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(100, 23);
+            this.btnClear.TabIndex = 23;
+            this.btnClear.Text = "Limpiar todo";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // F_enter_data
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 489);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.BtnNew);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -385,5 +397,6 @@
         private System.Windows.Forms.DateTimePicker DtpDateOfBirth;
         private System.Windows.Forms.Label LblStatus;
         private System.Windows.Forms.TextBox TbInterestRate;
+        private System.Windows.Forms.Button btnClear;
     }
 }

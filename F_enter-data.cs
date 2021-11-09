@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Clave5_Grupo9
 {
@@ -19,19 +20,24 @@ namespace Clave5_Grupo9
       InitializeComponent();
     }
 
-    private void BtnConfirm_Click(object sender, EventArgs e)
+
+        string limit;
+        private void BtnConfirm_Click(object sender, EventArgs e)
     {
 
-      //asignacion de la informacion de los input al objeto cliente
-      
-      defaultCustomer.fullName = TbFirstName.Text + TbLastName.Text;
-      defaultCustomer.address = TbHouse.Text + TbNeighborhood.Text + TbCity.Text;
-      defaultCustomer.birthday = DtpDateOfBirth.Text;
-      defaultCustomer.workPlace = TbWorkPlace.Text;
+    //asignacion de la informacion de los input al objeto cliente
 
-      //Validación de entradas en los textbox para impedir que queden vacios y donde deban ir números solo acepte números.
-      bool number = false;//Variable que permitirá donde deban ir solamente números
-      double addInterest;   
+    defaultCustomer.fullName = TbFirstName.Text + TbLastName.Text;
+    defaultCustomer.address = TbHouse.Text + TbNeighborhood.Text + TbCity.Text;
+    defaultCustomer.birthday = DtpDateOfBirth.Value.Date.ToString("yyyy-MM-dd");
+            defaultCustomer.workPlace = TbWorkPlace.Text;
+    defaultCustomer.DUI = Convert.ToInt32(TbID.Text);
+
+
+
+            //Validación de entradas en los textbox para impedir que queden vacios y donde deban ir números solo acepte números.
+            bool number = false;//Variable que permitirá donde deban ir solamente números
+    double addInterest;   
             
       if (string.IsNullOrEmpty(defaultCustomer.fullName)) 
       {
@@ -45,7 +51,7 @@ namespace Clave5_Grupo9
         MessageBox.Show("El dato ingresado en DUI/ID no es válido o el campo está vacío");
         return;
       }
-      defaultCustomer.DUI = int.Parse(TbID.Text);
+      
 
       if (string.IsNullOrEmpty(defaultCustomer.address)) 
       {
@@ -73,6 +79,7 @@ namespace Clave5_Grupo9
         return;
       }
 
+            
       number = double.TryParse(TbIncome.Text, out defaultCustomer.totalIncome);
       if (!number || string.IsNullOrEmpty(TbIncome.Text)) 
       {
@@ -95,9 +102,9 @@ namespace Clave5_Grupo9
         return;
       }
 
-            int indexOfSelections = CbCardsTypes.SelectedIndex;
-
-      //comprobacion de que es apto para el tipo de tarjeta elegido
+       int indexOfSelections = CbCardsTypes.SelectedIndex;
+       
+            //comprobacion de que es apto para el tipo de tarjeta elegido
       switch (indexOfSelections)
       {
         case 0:
@@ -106,6 +113,7 @@ namespace Clave5_Grupo9
             defaultCustomer.state = true;
             defaultCustomer.openning = new Card(400, Double.Parse(TbInterestRate.Text), cardTypes.azul);
             LblStatus.Text = "Aprobado";
+            limit = "400";
           }
           else
           {
@@ -119,6 +127,7 @@ namespace Clave5_Grupo9
             defaultCustomer.state = true;
             defaultCustomer.openning = new Card(600, Double.Parse(TbInterestRate.Text), cardTypes.dorado);
             LblStatus.Text = "Aprobado";
+            limit = "600";
           }
           else
           {
@@ -132,6 +141,7 @@ namespace Clave5_Grupo9
             defaultCustomer.state = true;
             defaultCustomer.openning = new Card(1000, Double.Parse(TbInterestRate.Text), cardTypes.platino);
             LblStatus.Text = "Aprobado";
+            limit = "1000";
           }
           else
           {
@@ -141,6 +151,65 @@ namespace Clave5_Grupo9
           break;
       }
 
-    }
+            double ingresoTotal;
+            ingresoTotal = Convert.ToDouble(TbIncome.Text) + Convert.ToDouble(TbOtherIncome.Text);
+
+            F_Confirm.nombre = defaultCustomer.fullName;
+            F_Confirm.dui = Convert.ToInt32(TbID.Text);
+            F_Confirm.direccion = defaultCustomer.address;
+            F_Confirm.fechanacimiento = defaultCustomer.birthday;
+            F_Confirm.tel = Convert.ToInt32(TbPhone.Text);
+            F_Confirm.trabajo = defaultCustomer.workPlace;
+            F_Confirm.ingresos = ingresoTotal;
+            F_Confirm.estado = LblStatus.Text;
+            F_Confirm.tipotarj = CbCardsTypes.Text;
+            F_Confirm.tarjlim = Convert.ToDouble(limit);
+            F_Confirm.interes = Convert.ToDouble(TbInterestRate.Text);
+
+            F_Confirm confirmar = new F_Confirm();
+            confirmar.Show();
+
+            
+           
+
+        }
+        
+
+
+        
+        public void btnClear_Click(object sender, EventArgs e)
+            
+        {
+            foreach (Control ctrl in groupBox1.Controls)
+
+            {
+
+                if (ctrl is TextBox)
+
+                {
+
+                    TextBox textBox = (TextBox)ctrl;
+
+                    textBox.Text = null;
+
+                }
+
+                if (ctrl is ComboBox)
+
+                {
+
+                    ComboBox comboBox = (ComboBox)ctrl;
+
+                    comboBox.SelectedIndex = -1;
+                }
+            }
+
+
+
+        }
+
+
+       
+
   }
 }
