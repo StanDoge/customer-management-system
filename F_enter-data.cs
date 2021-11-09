@@ -21,7 +21,6 @@ namespace Clave5_Grupo9
     }
 
 
-    double limit;
     bool number = false;//Variable que permitirá donde deban ir solamente números
     //double addInterest;
     double ingresoTotal;
@@ -125,7 +124,6 @@ namespace Clave5_Grupo9
             defaultCustomer.openning = new Card(400, Double.Parse(TbInterestRate.Text), cardTypes.azul);
             //defaultCustomer.openning.interestRate
             LblStatus.Text = "Aprobado";
-            limit =400;
             if (defaultCustomer.state == 1)
             {
               sendData();
@@ -143,7 +141,6 @@ namespace Clave5_Grupo9
             defaultCustomer.state = 1;
             defaultCustomer.openning = new Card(600, Double.Parse(TbInterestRate.Text), cardTypes.dorado);
             LblStatus.Text = "Aprobado";
-            limit = 600;
             if (defaultCustomer.state == 1)
             {
               sendData();
@@ -162,7 +159,6 @@ namespace Clave5_Grupo9
             defaultCustomer.openning = new Card(1000, Double.Parse(TbInterestRate.Text), cardTypes.platino);
             sendData();
             LblStatus.Text = "Aprobado";
-            limit = 1000;
             if (defaultCustomer.state == 1)
             {
               sendData();
