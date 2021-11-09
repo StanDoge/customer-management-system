@@ -25,17 +25,6 @@ namespace Clave5_Grupo9
     //double addInterest;
     double ingresoTotal;
 
-    //conexion con la base de datos
-    static string servidor = "localhost"; //Nombre o ip del servidor de MySQL
-    static string usuario = "root"; //Usuario de acceso a MySQL
-    static string password = "root"; //Contraseña de usuario de acceso a
-    static string bd = "clave5_grupo9db"; //Nombre de la base de datos
-
-    //Crearemos la cadena de conexión concatenando las variables
-    static string cadenaConexion = "Database=" + bd + "; Data Source=" + servidor +
-    ";User Id = " + usuario + "; Password=" + password + "";
-
-    static MySqlConnection conexionBD = new MySqlConnection(cadenaConexion);
     private void BtnConfirm_Click(object sender, EventArgs e)
     {
 
@@ -243,10 +232,10 @@ namespace Clave5_Grupo9
       MySqlCommand insertar1 = new MySqlCommand();
       MySqlCommand insertar2 = new MySqlCommand();
       MySqlCommand insertar3 = new MySqlCommand();
-      conexionBD.Open();
-      insertar1.Connection = conexionBD;
-      insertar2.Connection = conexionBD;
-      insertar3.Connection = conexionBD;
+      Form1.conexionBD.Open();
+      insertar1.Connection = Form1.conexionBD;
+      insertar2.Connection = Form1.conexionBD;
+      insertar3.Connection = Form1.conexionBD;
       insertar1.CommandText = "INSERT INTO customers(full_name,dui,address,birthday,phone,workplace,total_income,state) VALUES ('" + defaultCustomer.fullName + "','" + defaultCustomer.DUI + "','" + defaultCustomer.address + "','" + defaultCustomer.birthday + "','" + defaultCustomer.phoneNumber + "','" + defaultCustomer.workPlace + "','" + defaultCustomer.totalIncome + "','" + defaultCustomer.state + "');";
       insertar2.CommandText = "INSERT INTO openings(date) VALUES ('" + defaultCustomer.openning.date + "');";
       insertar3.CommandText = "INSERT INTO cards(card_type,card_limit,interest_rate) VALUES ('" + defaultCustomer.openning.card + "','" + defaultCustomer.openning.cardLimit + "','" + defaultCustomer.openning.interestRate + "');";
@@ -269,7 +258,7 @@ namespace Clave5_Grupo9
       finally
       {
         MessageBox.Show("Todo bien capo");
-        conexionBD.Close();
+        Form1.conexionBD.Close();
       }
     }
 
