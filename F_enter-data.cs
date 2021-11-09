@@ -153,16 +153,16 @@ namespace Clave5_Grupo9
       ingresoTotal = Convert.ToDouble(TbIncome.Text) + Convert.ToDouble(TbOtherIncome.Text);
 
       F_Confirm.nombre = defaultCustomer.fullName;
-      F_Confirm.dui = Convert.ToInt32(TbID.Text);
+      F_Confirm.dui = defaultCustomer.DUI;
       F_Confirm.direccion = defaultCustomer.address;
       F_Confirm.fechanacimiento = defaultCustomer.birthday;
-      F_Confirm.tel = Convert.ToInt32(TbPhone.Text);
+      F_Confirm.tel = defaultCustomer.phoneNumber;
       F_Confirm.trabajo = defaultCustomer.workPlace;
-      F_Confirm.ingresos = ingresoTotal;
-      F_Confirm.estado = LblStatus.Text;
-      F_Confirm.tipotarj = CbCardsTypes.Text;
-      F_Confirm.tarjlim = Convert.ToDouble(limit);
-      F_Confirm.interes = Convert.ToDouble(TbInterestRate.Text);
+      F_Confirm.ingresos = defaultCustomer.totalIncome;
+      F_Confirm.estado = defaultCustomer.state;
+      F_Confirm.tipotarj = Convert.ToString( defaultCustomer.openning.card);
+      F_Confirm.tarjlim = defaultCustomer.openning.cardLimit;
+      F_Confirm.interes = defaultCustomer.openning.interestRate;
 
       F_Confirm confirmar = new F_Confirm();
       confirmar.Show();
@@ -217,9 +217,13 @@ namespace Clave5_Grupo9
 
     }
 
-
-
-  }
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            F_option opción = new F_option();
+            opción.Show();
+            Hide();
+        }
+    }
 
 
 }

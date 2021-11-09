@@ -28,7 +28,7 @@ namespace Clave5_Grupo9
     public static int tel;
     public static string trabajo;
     public static double ingresos;
-    public static string estado;
+    public static bool estado;
     public static int idcliente;
     public static int idtarj;
     public static string tipotarj;
@@ -46,8 +46,8 @@ namespace Clave5_Grupo9
       lblPhone.Text = Convert.ToString(tel);
       lblWorkplace.Text = trabajo;
       lblTotalIncome.Text = Convert.ToString(ingresos);
-      lblStatus.Text = estado;
-      lblCardType.Text = tipotarj;
+      lblStatus.Text = Convert.ToString(estado);
+      lblCardType.Text = Convert.ToString(tipotarj);
       lblCardLimit.Text = Convert.ToString(tarjlim);
       lblInterestRate.Text = Convert.ToString(interes);
     }

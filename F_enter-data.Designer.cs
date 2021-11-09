@@ -56,7 +56,7 @@
             this.CbCardsTypes = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -337,22 +337,22 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Estado del Cliente:";
             // 
-            // btnClear
+            // btnReturn
             // 
-            this.btnClear.Location = new System.Drawing.Point(364, 454);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(100, 23);
-            this.btnClear.TabIndex = 23;
-            this.btnClear.Text = "Limpiar todo";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnReturn.Location = new System.Drawing.Point(364, 449);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(100, 23);
+            this.btnReturn.TabIndex = 23;
+            this.btnReturn.Text = "Volver atrás";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // F_enter_data
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 489);
-            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.BtnNew);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -398,6 +398,6 @@
         private System.Windows.Forms.DateTimePicker DtpDateOfBirth;
         private System.Windows.Forms.Label LblStatus;
         private System.Windows.Forms.TextBox TbInterestRate;
-        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

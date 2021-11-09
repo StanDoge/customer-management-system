@@ -46,7 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGet = new System.Windows.Forms.Button();
             this.dgSearch = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -160,7 +159,6 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lblCount);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.btnGet);
             this.groupBox2.Controls.Add(this.dgSearch);
             this.groupBox2.Location = new System.Drawing.Point(30, 18);
             this.groupBox2.Name = "groupBox2";
@@ -181,7 +179,7 @@
             // lblTo
             // 
             this.lblTo.AutoSize = true;
-            this.lblTo.Location = new System.Drawing.Point(573, 451);
+            this.lblTo.Location = new System.Drawing.Point(495, 450);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(35, 13);
             this.lblTo.TabIndex = 8;
@@ -190,7 +188,7 @@
             // lblFrom
             // 
             this.lblFrom.AutoSize = true;
-            this.lblFrom.Location = new System.Drawing.Point(573, 422);
+            this.lblFrom.Location = new System.Drawing.Point(495, 421);
             this.lblFrom.Name = "lblFrom";
             this.lblFrom.Size = new System.Drawing.Size(35, 13);
             this.lblFrom.TabIndex = 7;
@@ -199,7 +197,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(504, 451);
+            this.label7.Location = new System.Drawing.Point(426, 450);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 6;
@@ -208,7 +206,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(504, 422);
+            this.label6.Location = new System.Drawing.Point(426, 421);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 5;
@@ -217,7 +215,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(504, 379);
+            this.label2.Location = new System.Drawing.Point(426, 378);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 4;
@@ -226,7 +224,7 @@
             // lblCount
             // 
             this.lblCount.AutoSize = true;
-            this.lblCount.Location = new System.Drawing.Point(383, 413);
+            this.lblCount.Location = new System.Drawing.Point(305, 412);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(35, 13);
             this.lblCount.TabIndex = 3;
@@ -235,20 +233,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(197, 413);
+            this.label1.Location = new System.Drawing.Point(119, 412);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cantidad de aperturas mostradas:";
-            // 
-            // btnGet
-            // 
-            this.btnGet.Location = new System.Drawing.Point(63, 403);
-            this.btnGet.Name = "btnGet";
-            this.btnGet.Size = new System.Drawing.Size(101, 33);
-            this.btnGet.TabIndex = 1;
-            this.btnGet.Text = "Obtener";
-            this.btnGet.UseVisualStyleBackColor = true;
             // 
             // dgSearch
             // 
@@ -324,7 +313,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button Volver;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnGet;
         private System.Windows.Forms.DataGridView dgSearch;
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Label lblFrom;
