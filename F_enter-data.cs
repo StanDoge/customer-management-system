@@ -22,6 +22,9 @@ namespace Clave5_Grupo9
 
 
     string limit;
+    bool number = false;//Variable que permitirá donde deban ir solamente números
+    double addInterest;
+    double ingresoTotal;
     private void BtnConfirm_Click(object sender, EventArgs e)
     {
 
@@ -35,8 +38,7 @@ namespace Clave5_Grupo9
 
 
       //Validación de entradas en los textbox para impedir que queden vacios y donde deban ir números solo acepte números.
-      bool number = false;//Variable que permitirá donde deban ir solamente números
-      double addInterest;
+      int indexOfSelections = CbCardsTypes.SelectedIndex;
 
       if (string.IsNullOrEmpty(defaultCustomer.fullName))
       {
@@ -101,7 +103,6 @@ namespace Clave5_Grupo9
         return;
       }
 
-      int indexOfSelections = CbCardsTypes.SelectedIndex;
 
       //comprobacion de que es apto para el tipo de tarjeta elegido
       switch (indexOfSelections)
@@ -149,7 +150,6 @@ namespace Clave5_Grupo9
           }
           break;
       }
-      double ingresoTotal;
       ingresoTotal = Convert.ToDouble(TbIncome.Text) + Convert.ToDouble(TbOtherIncome.Text);
 
       F_Confirm.nombre = defaultCustomer.fullName;
