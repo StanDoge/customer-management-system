@@ -24,6 +24,7 @@ namespace Clave5_Grupo9
     bool number = false;//Variable que permitirá donde deban ir solamente números
     double addInterest;
     double ingresoTotal;
+    double interes;
 
     private void BtnConfirm_Click(object sender, EventArgs e)
     {
@@ -239,18 +240,21 @@ namespace Clave5_Grupo9
       insertar3.Connection = Form1.conexionBD;
       insertar1.CommandText = "INSERT INTO customers(full_name,dui,address,birthday,phone,workplace,total_income,state) VALUES ('" + defaultCustomer.fullName + "','" + defaultCustomer.DUI + "','" + defaultCustomer.address + "','" + defaultCustomer.birthday + "','" + defaultCustomer.phoneNumber + "','" + defaultCustomer.workPlace + "','" + defaultCustomer.totalIncome + "','" + defaultCustomer.state + "');";
       insertar2.CommandText = "INSERT INTO openings(date) VALUES ('" + defaultCustomer.openning.date + "');";
-      insertar3.CommandText = "INSERT INTO cards(card_type,card_limit,interest_rate) VALUES ('" + defaultCustomer.openning.card + "','" + defaultCustomer.openning.cardLimit + "','" + defaultCustomer.openning.interestRate + "');";
+      insertar3.CommandText = "INSERT INTO cards(card_type,card_limit,interest_rate) VALUES ('" + defaultCustomer.openning.card.ToString() + "','" + defaultCustomer.openning.cardLimit + "','" + defaultCustomer.openning.interestRate + "');";
 
       //la cuenta solo sigue siempre y cuando el formulario no se cierre, los registros deben de hacerse de manera continua
       try
       {
         MySqlDataAdapter adaptador = new MySqlDataAdapter();
         MySqlDataAdapter adaptador2 = new MySqlDataAdapter();
+        MySqlDataAdapter adaptador3 = new MySqlDataAdapter();
         adaptador.SelectCommand = insertar1;
         adaptador2.SelectCommand = insertar2;
+        adaptador3.SelectCommand = insertar3;
         DataTable tabla = new DataTable();
         adaptador.Fill(tabla); //ejecutar el insert
-        adaptador2.Fill(tabla); //ejecutar el insert
+        adaptador2.Fill(tabla); 
+        adaptador3.Fill(tabla); 
       }
       catch (ArgumentException excepcion)
       {
