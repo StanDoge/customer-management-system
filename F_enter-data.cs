@@ -246,11 +246,15 @@ namespace Clave5_Grupo9
     {
       MySqlCommand insertar1 = new MySqlCommand();
       MySqlCommand insertar2 = new MySqlCommand();
+      MySqlCommand insertar3 = new MySqlCommand();
       conexionBD.Open();
       insertar1.Connection = conexionBD;
       insertar2.Connection = conexionBD;
+      insertar3.Connection = conexionBD;
       insertar1.CommandText = "INSERT INTO customers(full_name,dui,address,birthday,phone,workplace,total_income,state) VALUES ('" + defaultCustomer.fullName + "','" + defaultCustomer.DUI + "','" + defaultCustomer.address + "','" + defaultCustomer.birthday + "','" + defaultCustomer.phoneNumber + "','" + defaultCustomer.workPlace + "','" + defaultCustomer.totalIncome + "','" + defaultCustomer.state + "');";
       insertar2.CommandText = "INSERT INTO openings(date) VALUES ('" + defaultCustomer.openning.date + "');";
+      insertar3.CommandText = "INSERT INTO cards(card_type,card_limit,interest_rate) VALUES ('" + defaultCustomer.openning.card + "','" + defaultCustomer.openning.cardLimit + "','" + defaultCustomer.openning.interestRate + "');";
+
       //la cuenta solo sigue siempre y cuando el formulario no se cierre, los registros deben de hacerse de manera continua
       try
       {
