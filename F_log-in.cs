@@ -18,23 +18,23 @@ namespace Clave5_Grupo9
     {
       InitializeComponent();
     }
-        //
-        //
-        //
-        //CODIGO PARA CONEXION DE BD
-        static  string servidor = "localhost"; //Nombre o ip del servidor de MySQL
-        static string bd = "clave5_grupo9db"; //Nombre de la base de datos
-        static string userBD = "root"; //Usuario de acceso a MySQL
-        static string pwdBD = "root"; //Contraseña de usuario de acceso a MySQL
-        //Crearemos la cadena de conexión concatenando las variables
-        static public string cadenaConexion = "Database=" + bd + "; Data Source=" + servidor + "; User Id = " + userBD + "; Password=" + pwdBD +";";
-        //Instancia para conexión a MySQL, recibe la cadena de conexión
-         static public MySqlConnection conexionBD = new MySqlConnection(cadenaConexion);
-        //
-        //
-        //
+    //
+    //
+    //
+    ////CODIGO PARA CONEXION DE BD
+    static string servidor = "localhost"; //Nombre o ip del servidor de MySQL
+    static string bd = "clave5_grupo9db"; //Nombre de la base de datos
+    static string userBD = "root"; //Usuario de acceso a MySQL
+    static string pwdBD = "root"; //Contraseña de usuario de acceso a MySQL
+                                  //Crearemos la cadena de conexión concatenando las variables
+    static public string cadenaConexion = "Database=" + bd + "; Data Source=" + servidor + "; User Id = " + userBD + "; Password=" + pwdBD + ";";
+    //Instancia para conexión a MySQL, recibe la cadena de conexión
+    static public MySqlConnection conexionBD = new MySqlConnection(cadenaConexion);
+    //
+    //
+    //
 
-        private void Form1_Load(object sender, EventArgs e)
+    private void Form1_Load(object sender, EventArgs e)
     {
 
     }
