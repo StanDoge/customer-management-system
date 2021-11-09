@@ -21,10 +21,22 @@ namespace Clave5_Grupo9
     }
 
 
-    string limit;
+    double limit;
     bool number = false;//Variable que permitirá donde deban ir solamente números
-    double addInterest;
+    //double addInterest;
     double ingresoTotal;
+
+    //conexion con la base de datos
+    static string servidor = "localhost"; //Nombre o ip del servidor de MySQL
+    static string usuario = "root"; //Usuario de acceso a MySQL
+    static string password = "root"; //Contraseña de usuario de acceso a
+    static string bd = "clave5_grupo9db"; //Nombre de la base de datos
+
+    //Crearemos la cadena de conexión concatenando las variables
+    static string cadenaConexion = "Database=" + bd + "; Data Source=" + servidor +
+    ";User Id = " + usuario + "; Password=" + password + "";
+
+    static MySqlConnection conexionBD = new MySqlConnection(cadenaConexion);
     private void BtnConfirm_Click(object sender, EventArgs e)
     {
 
@@ -35,7 +47,6 @@ namespace Clave5_Grupo9
       defaultCustomer.birthday = DtpDateOfBirth.Value.Date.ToString("yyyy-MM-dd");
       defaultCustomer.workPlace = TbWorkPlace.Text;
       defaultCustomer.DUI = Convert.ToInt32(TbID.Text);
-
 
       //Validación de entradas en los textbox para impedir que queden vacios y donde deban ir números solo acepte números.
       int indexOfSelections = CbCardsTypes.SelectedIndex;
@@ -96,7 +107,7 @@ namespace Clave5_Grupo9
       }
       defaultCustomer.totalIncome = double.Parse(TbIncome.Text) + double.Parse(TbOtherIncome.Text);
 
-      number = double.TryParse(TbInterestRate.Text, out addInterest);
+      number = double.TryParse(TbInterestRate.Text, out double addInterest);
       if (!number || string.IsNullOrEmpty(TbInterestRate.Text) || Convert.ToDouble(TbInterestRate.Text) < 0.30 || Convert.ToDouble(TbInterestRate.Text) > 0.40)
       {
         MessageBox.Show("La tasa de interés no es válida o el campo se encuntra vacío");
@@ -110,10 +121,15 @@ namespace Clave5_Grupo9
         case 0:
           if (defaultCustomer.totalIncome >= 400)
           {
-            defaultCustomer.state = true;
+            defaultCustomer.state = 1;
             defaultCustomer.openning = new Card(400, Double.Parse(TbInterestRate.Text), cardTypes.azul);
+            //defaultCustomer.openning.interestRate
             LblStatus.Text = "Aprobado";
-            limit = "400";
+            limit =400;
+            if (defaultCustomer.state == 1)
+            {
+              sendData();
+            }
           }
           else
           {
@@ -124,10 +140,14 @@ namespace Clave5_Grupo9
         case 1:
           if (defaultCustomer.totalIncome > 500)
           {
-            defaultCustomer.state = true;
+            defaultCustomer.state = 1;
             defaultCustomer.openning = new Card(600, Double.Parse(TbInterestRate.Text), cardTypes.dorado);
             LblStatus.Text = "Aprobado";
-            limit = "600";
+            limit = 600;
+            if (defaultCustomer.state == 1)
+            {
+              sendData();
+            }
           }
           else
           {
@@ -138,10 +158,15 @@ namespace Clave5_Grupo9
         case 2:
           if (defaultCustomer.totalIncome > 700)
           {
-            defaultCustomer.state = true;
+            defaultCustomer.state = 1;
             defaultCustomer.openning = new Card(1000, Double.Parse(TbInterestRate.Text), cardTypes.platino);
+            sendData();
             LblStatus.Text = "Aprobado";
-            limit = "1000";
+            limit = 1000;
+            if (defaultCustomer.state == 1)
+            {
+              sendData();
+            }
           }
           else
           {
@@ -217,16 +242,45 @@ namespace Clave5_Grupo9
 
     }
 
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            F_option opción = new F_option();
-            opción.Show();
-            Hide();
-        }
+    void sendData()
+    {
+      MySqlCommand insertar1 = new MySqlCommand();
+      MySqlCommand insertar2 = new MySqlCommand();
+      MySqlCommand insertar3 = new MySqlCommand();
+      conexionBD.Open();
+      insertar1.Connection = conexionBD;
+      insertar2.Connection = conexionBD;
+      insertar3.Connection = conexionBD;
+      insertar1.CommandText = "INSERT INTO customers(full_name,dui,address,birthday,phone,workplace,total_income,state) VALUES ('" + defaultCustomer.fullName + "','" + defaultCustomer.DUI + "','" + defaultCustomer.address + "','" + defaultCustomer.birthday + "','" + defaultCustomer.phoneNumber + "','" + defaultCustomer.workPlace + "','" + defaultCustomer.totalIncome + "','" + defaultCustomer.state + "');";
+      insertar2.CommandText = "INSERT INTO openings(date) VALUES ('" + defaultCustomer.openning.date + "');";
+      insertar3.CommandText = "INSERT INTO cards(card_type,card_limit,interest_rate) VALUES ('" + defaultCustomer.openning.card + "','" + defaultCustomer.openning.cardLimit + "','" + defaultCustomer.openning.interestRate + "');";
+
+      //la cuenta solo sigue siempre y cuando el formulario no se cierre, los registros deben de hacerse de manera continua
+      try
+      {
+        MySqlDataAdapter adaptador = new MySqlDataAdapter();
+        MySqlDataAdapter adaptador2 = new MySqlDataAdapter();
+        adaptador.SelectCommand = insertar1;
+        adaptador2.SelectCommand = insertar2;
+        DataTable tabla = new DataTable();
+        adaptador.Fill(tabla); //ejecutar el insert
+        adaptador2.Fill(tabla); //ejecutar el insert
+      }
+      catch (ArgumentException excepcion)
+      {
+        MessageBox.Show($"Algo salio mal {excepcion}");
+      }
+      finally
+      {
+        MessageBox.Show("Todo bien capo");
+        conexionBD.Close();
+      }
     }
 
-
+  }
 }
+
+
 
 
 

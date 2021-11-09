@@ -113,8 +113,6 @@ namespace Clave5_Grupo9
       }
     }
 
-
-
     //limpiar todos los campos
     private void btnClear_Click(object sender, EventArgs e)
     {
@@ -135,11 +133,8 @@ namespace Clave5_Grupo9
       Form1.conexionBD.Open(); //se abre la conexion de la variable global declara en la parte superior del formulario
                                //Instancia para conexión a MySQL, recibe la cadena de conexión
       consulta.Connection = Form1.conexionBD;
-      consulta.CommandText = (" select* from customers  JOIN openings ON customers.customer_id=openings.customer_id  JOIN cards ON customers.customer_id=cards.customer_id; ");
-
-      //"CREATE TEMPORARY TABLE temp_searchResult AS SELECT * FROM select* from customers  JOIN openings ON customers.customer_id=openings.customer_id  JOIN cards ON customers.customer_id=cards.customer_id;"
-      //+ "ALTER TABLE temp_searchResult DROP COLUMN openings.customer_id;"
-      //+ "SELECT* FROM temp_searchResult; ")
+      //consulta.CommandText = (" select* from customers  JOIN openings ON customers.customer_id=openings.customer_id  JOIN cards ON customers.customer_id=cards.customer_id; ");
+      consulta.CommandText = (" select* from customers  LEFT JOIN openings ON customers.customer_id=openings.customer_id UNION select* from customers  RIGHT JOIN openings ON customers.customer_id=openings.customer_id; ");
 
       try
       {

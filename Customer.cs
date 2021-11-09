@@ -10,7 +10,7 @@ namespace Clave5_Grupo9
   {
     public string workPlace;
     public double totalIncome;
-    public bool state;
+    public int state;
     public Card openning;
   }
 }
