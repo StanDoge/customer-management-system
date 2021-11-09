@@ -22,7 +22,7 @@ namespace Clave5_Grupo9
 
 
     bool number = false;//Variable que permitirá donde deban ir solamente números
-    //double addInterest;
+    double addInterest;
     double ingresoTotal;
 
     private void BtnConfirm_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace Clave5_Grupo9
       defaultCustomer.address = TbHouse.Text + TbNeighborhood.Text + TbCity.Text;
       defaultCustomer.birthday = DtpDateOfBirth.Value.Date.ToString("yyyy-MM-dd");
       defaultCustomer.workPlace = TbWorkPlace.Text;
-      defaultCustomer.DUI = int.Parse((TbID.Text));
+
 
       //Validación de entradas en los textbox para impedir que queden vacios y donde deban ir números solo acepte números.
       int indexOfSelections = CbCardsTypes.SelectedIndex;
@@ -51,7 +51,7 @@ namespace Clave5_Grupo9
         MessageBox.Show("El dato ingresado en DUI/ID no es válido o el campo está vacío");
         return;
       }
-
+      defaultCustomer.DUI = int.Parse((TbID.Text));
 
       if (string.IsNullOrEmpty(defaultCustomer.address))
       {
@@ -95,13 +95,15 @@ namespace Clave5_Grupo9
       }
       defaultCustomer.totalIncome = double.Parse(TbIncome.Text) + double.Parse(TbOtherIncome.Text);
 
-      number = double.TryParse(TbInterestRate.Text, out double addInterest);
-      if (!number || string.IsNullOrEmpty(TbInterestRate.Text) || Convert.ToDouble(TbInterestRate.Text) < 0.30 || Convert.ToDouble(TbInterestRate.Text) > 0.40)
+      number = double.TryParse(TbInterestRate.Text, out addInterest);
+      if (!number || string.IsNullOrEmpty(TbInterestRate.Text) )
       {
-        MessageBox.Show("La tasa de interés no es válida o el campo se encuntra vacío");
-        return;
+            if(addInterest < 0.30 && addInterest > 0.40)
+            {
+                    MessageBox.Show("La tasa de interés no es válida o el campo se encuntra vacío");
+                    return;
+            }
       }
-
 
       //comprobacion de que es apto para el tipo de tarjeta elegido
       switch (indexOfSelections)
@@ -110,7 +112,7 @@ namespace Clave5_Grupo9
           if (defaultCustomer.totalIncome >= 400 )
           {
             defaultCustomer.state = 1;
-            defaultCustomer.openning = new Card(400, Double.Parse(TbInterestRate.Text), cardTypes.azul);
+            defaultCustomer.openning = new Card(400, addInterest, cardTypes.azul);
             //defaultCustomer.openning.interestRate
             LblStatus.Text = "Aprobado";
             if (defaultCustomer.state == 1)
@@ -128,7 +130,7 @@ namespace Clave5_Grupo9
           if (defaultCustomer.totalIncome > 500 )
           {
             defaultCustomer.state = 1;
-            defaultCustomer.openning = new Card(600, Double.Parse(TbInterestRate.Text), cardTypes.dorado);
+            defaultCustomer.openning = new Card(600, addInterest, cardTypes.dorado);
             LblStatus.Text = "Aprobado";
             if (defaultCustomer.state == 1)
             {
@@ -145,7 +147,7 @@ namespace Clave5_Grupo9
           if (defaultCustomer.totalIncome > 700)
           {
             defaultCustomer.state = 1;
-            defaultCustomer.openning = new Card(1000, Double.Parse(TbInterestRate.Text), cardTypes.platino);
+            defaultCustomer.openning = new Card(1000, addInterest, cardTypes.platino);
             LblStatus.Text = "Aprobado";
             if (defaultCustomer.state == 1)
             {
