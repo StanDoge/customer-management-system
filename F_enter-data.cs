@@ -277,7 +277,13 @@ namespace Clave5_Grupo9
       }
     }
 
-  }
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            F_option opción = new F_option();
+            opción.Show();
+            Hide();
+        }
+    }
 }
 
 

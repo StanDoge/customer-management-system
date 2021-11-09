@@ -28,7 +28,7 @@ namespace Clave5_Grupo9
     public static int tel;
     public static string trabajo;
     public static double ingresos;
-    public static bool estado;
+    public static int estado;
     public static int idcliente;
     public static int idtarj;
     public static string tipotarj;
