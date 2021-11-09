@@ -179,6 +179,9 @@ namespace Clave5_Grupo9
 
     }
 
+    /// <summary>
+    /// Limpia los inputs del Form
+    /// </summary>
     private void BtnNew_Click(object sender, EventArgs e)
     {
       TbFirstName.ResetText();
@@ -198,6 +201,9 @@ namespace Clave5_Grupo9
     }
 
 
+    /// <summary>
+    /// Limpia los controles de FORM
+    /// </summary>
     public void btnClear_Click(object sender, EventArgs e)
 
     {
@@ -227,6 +233,9 @@ namespace Clave5_Grupo9
 
     }
 
+    /// <summary>
+    /// Hace la conexion con la BD y ejecuta el INSERT
+    /// </summary>
     void sendData()
     {
       MySqlCommand insertar1 = new MySqlCommand();
@@ -240,7 +249,6 @@ namespace Clave5_Grupo9
       insertar2.CommandText = "INSERT INTO openings(date) VALUES ('" + defaultCustomer.openning.date + "');";
       insertar3.CommandText = "INSERT INTO cards(card_type,card_limit,interest_rate) VALUES ('" + defaultCustomer.openning.card.ToString() + "','" + defaultCustomer.openning.cardLimit + "','" + defaultCustomer.openning.interestRate + "');";
 
-      //la cuenta solo sigue siempre y cuando el formulario no se cierre, los registros deben de hacerse de manera continua
       try
       {
         MySqlDataAdapter adaptador = new MySqlDataAdapter();
