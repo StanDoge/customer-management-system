@@ -24,7 +24,6 @@ namespace Clave5_Grupo9
     bool number = false;//Variable que permitirá donde deban ir solamente números
     double addInterest;
     double ingresoTotal;
-    double interes;
 
     private void BtnConfirm_Click(object sender, EventArgs e)
     {
@@ -97,9 +96,9 @@ namespace Clave5_Grupo9
       defaultCustomer.totalIncome = double.Parse(TbIncome.Text) + double.Parse(TbOtherIncome.Text);
 
       number = double.TryParse(TbInterestRate.Text, out addInterest);
-      if (!number || string.IsNullOrEmpty(TbInterestRate.Text) )
+      if (!number || !string.IsNullOrEmpty(TbInterestRate.Text) )
       {
-            if(addInterest < 0.30 && addInterest > 0.40)
+            if(addInterest < 0.30 || addInterest > 0.40)
             {
                     MessageBox.Show("La tasa de interés no es válida o el campo se encuntra vacío");
                     return;
