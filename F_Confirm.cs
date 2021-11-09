@@ -52,8 +52,6 @@ namespace Clave5_Grupo9
       lblInterestRate.Text = Convert.ToString(interes);
     }
 
-
-
     public static void insertBD()
     {
       //
