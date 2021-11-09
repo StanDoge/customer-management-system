@@ -21,7 +21,7 @@ namespace Clave5_Grupo9
     }
 
 
-    string limit;
+    double limit;
     bool number = false;//Variable que permitirá donde deban ir solamente números
     //double addInterest;
     double ingresoTotal;
@@ -31,7 +31,6 @@ namespace Clave5_Grupo9
     static string usuario = "root"; //Usuario de acceso a MySQL
     static string password = "root"; //Contraseña de usuario de acceso a
     static string bd = "clave5_grupo9db"; //Nombre de la base de datos
-    int counter = 1;
 
     //Crearemos la cadena de conexión concatenando las variables
     static string cadenaConexion = "Database=" + bd + "; Data Source=" + servidor +
@@ -126,7 +125,12 @@ namespace Clave5_Grupo9
             defaultCustomer.openning = new Card(400, Double.Parse(TbInterestRate.Text), cardTypes.azul);
             //defaultCustomer.openning.interestRate
             LblStatus.Text = "Aprobado";
-            limit = "400";
+            limit =400;
+            if (defaultCustomer.state)
+            {
+              sendData();
+              MessageBox.Show("mande la funcion");
+            }
           }
           else
           {
@@ -139,8 +143,9 @@ namespace Clave5_Grupo9
           {
             defaultCustomer.state = true;
             defaultCustomer.openning = new Card(600, Double.Parse(TbInterestRate.Text), cardTypes.dorado);
+            sendData();
             LblStatus.Text = "Aprobado";
-            limit = "600";
+            limit = 600;
           }
           else
           {
@@ -153,8 +158,9 @@ namespace Clave5_Grupo9
           {
             defaultCustomer.state = true;
             defaultCustomer.openning = new Card(1000, Double.Parse(TbInterestRate.Text), cardTypes.platino);
+            sendData();
             LblStatus.Text = "Aprobado";
-            limit = "1000";
+            limit = 1000;
           }
           else
           {
@@ -230,37 +236,36 @@ namespace Clave5_Grupo9
 
     }
 
-    //void sendData()
-    //{
-    //  MySqlCommand insertar1 = new MySqlCommand();
-    //  MySqlCommand insertar2 = new MySqlCommand();
-    //  conexionBD.Open();
-    //  insertar1.Connection = conexionBD;
-    //  insertar2.Connection = conexionBD;
-    //  insertar1.CommandText = "INSERT INTO customers(full_name,,dui,address,birthday,phone,workplace,total_income,state) VALUES ('" + defaultCustomer.fullName + "','" + defaultCustomer.DUI + "','" + defaultCustomer.address + "','" + defaultCustomer.birthday + "','" + defaultCustomer.phoneNumber + "','" + defaultCustomer.workPlace + "','" + defaultCustomer.totalIncome + "','" + defaultCustomer.state + "');";
-    //  insertar2.CommandText = "INSERT INTO openings(date,customer_id) VALUES ('" + Dtm.Text + "','" + counter + "');";
-    //  //la cuenta solo sigue siempre y cuando el formulario no se cierre, los registros deben de hacerse de manera continua
-    //  try
-    //  {
-    //    MySqlDataAdapter adaptador = new MySqlDataAdapter();
-    //    MySqlDataAdapter adaptador2 = new MySqlDataAdapter();
-    //    adaptador.SelectCommand = insertar1;
-    //    adaptador2.SelectCommand = insertar2;
-    //    DataTable tabla = new DataTable();
-    //    adaptador.Fill(tabla); //ejecutar el insert
-    //    adaptador2.Fill(tabla); //ejecutar el insert
-    //  }
-    //  catch (ArgumentException basura)
-    //  {
-    //    MessageBox.Show($"Algo salio mal {basura}");
-    //  }
-    //  finally
-    //  {
-    //    MessageBox.Show("Todo bien capo");
-    //    conexionBD.Close();
-    //    counter += 1;
-    //  }
-    //}
+    void sendData()
+    {
+      MySqlCommand insertar1 = new MySqlCommand();
+      MySqlCommand insertar2 = new MySqlCommand();
+      conexionBD.Open();
+      insertar1.Connection = conexionBD;
+      insertar2.Connection = conexionBD;
+      insertar1.CommandText = "INSERT INTO customers(full_name,dui,address,birthday,phone,workplace,total_income,state) VALUES ('" + defaultCustomer.fullName + "','" + defaultCustomer.DUI + "','" + defaultCustomer.address + "','" + defaultCustomer.birthday + "','" + defaultCustomer.phoneNumber + "','" + defaultCustomer.workPlace + "','" + defaultCustomer.totalIncome + "','" + defaultCustomer.state + "');";
+      insertar2.CommandText = "INSERT INTO openings(date) VALUES ('" + defaultCustomer.openning.date + "');";
+      //la cuenta solo sigue siempre y cuando el formulario no se cierre, los registros deben de hacerse de manera continua
+      try
+      {
+        MySqlDataAdapter adaptador = new MySqlDataAdapter();
+        MySqlDataAdapter adaptador2 = new MySqlDataAdapter();
+        adaptador.SelectCommand = insertar1;
+        adaptador2.SelectCommand = insertar2;
+        DataTable tabla = new DataTable();
+        adaptador.Fill(tabla); //ejecutar el insert
+        adaptador2.Fill(tabla); //ejecutar el insert
+      }
+      catch (ArgumentException excepcion)
+      {
+        MessageBox.Show($"Algo salio mal {excepcion}");
+      }
+      finally
+      {
+        MessageBox.Show("Todo bien capo");
+        conexionBD.Close();
+      }
+    }
 
   }
 }
