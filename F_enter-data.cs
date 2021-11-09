@@ -129,7 +129,6 @@ namespace Clave5_Grupo9
             if (defaultCustomer.state == 1)
             {
               sendData();
-              MessageBox.Show("mande la funcion");
             }
           }
           else
@@ -148,7 +147,6 @@ namespace Clave5_Grupo9
             if (defaultCustomer.state == 1)
             {
               sendData();
-              MessageBox.Show("mande la funcion");
             }
           }
           else
@@ -168,7 +166,6 @@ namespace Clave5_Grupo9
             if (defaultCustomer.state == 1)
             {
               sendData();
-              MessageBox.Show("mande la funcion");
             }
           }
           else

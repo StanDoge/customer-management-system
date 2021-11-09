@@ -134,7 +134,7 @@ namespace Clave5_Grupo9
                                //Instancia para conexión a MySQL, recibe la cadena de conexión
       consulta.Connection = Form1.conexionBD;
       //consulta.CommandText = (" select* from customers  JOIN openings ON customers.customer_id=openings.customer_id  JOIN cards ON customers.customer_id=cards.customer_id; ");
-      consulta.CommandText = (" select* from customers  LEFT JOIN openings ON customers.customer_id=openings.customer_id UNION select* from customers  RIGHT JOIN openings ON customers.customer_id=openings.customer_id; ");
+      //consulta.CommandText = (" select* from customers  LEFT JOIN openings ON customers.customer_id=openings.customer_id UNION select* from customers  RIGHT JOIN openings ON customers.customer_id=openings.customer_id; ");
 
       try
       {
