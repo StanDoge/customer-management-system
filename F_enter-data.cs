@@ -34,7 +34,7 @@ namespace Clave5_Grupo9
       defaultCustomer.address = TbHouse.Text + TbNeighborhood.Text + TbCity.Text;
       defaultCustomer.birthday = DtpDateOfBirth.Value.Date.ToString("yyyy-MM-dd");
       defaultCustomer.workPlace = TbWorkPlace.Text;
-      defaultCustomer.DUI = int.Parse((TbID.Text));
+      defaultCustomer.DUI = int.Parse(TbID.Text);
 
       //Validación de entradas en los textbox para impedir que queden vacios y donde deban ir números solo acepte números.
       int indexOfSelections = CbCardsTypes.SelectedIndex;

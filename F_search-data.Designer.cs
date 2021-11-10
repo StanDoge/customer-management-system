@@ -35,7 +35,6 @@
             this.dtpToSearch = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.Volver = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGetAll = new System.Windows.Forms.Button();
@@ -126,17 +125,6 @@
             this.btnSearch.Text = "Buscar";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnClear.Location = new System.Drawing.Point(365, 639);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(94, 33);
-            this.btnClear.TabIndex = 13;
-            this.btnClear.Text = "Limpiar todo";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Volver
             // 
@@ -282,7 +270,6 @@
             this.ClientSize = new System.Drawing.Size(831, 687);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Volver);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -310,7 +297,6 @@
         private System.Windows.Forms.DateTimePicker dtpToSearch;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button Volver;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgSearch;
