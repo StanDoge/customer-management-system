@@ -128,7 +128,8 @@ namespace Clave5_Grupo9
             DataTable tabla = new DataTable();
             adaptadorMySQL.Fill(tabla);
             dgSearch.DataSource = tabla;
-        }
+            lblCount.Text = tabla.Rows.Count.ToString();
+            }
         catch
         {
         }
@@ -171,6 +172,7 @@ namespace Clave5_Grupo9
         DataTable tabla = new DataTable();
         adaptadorMySQL.Fill(tabla);
         dgSearch.DataSource = tabla;
+        lblCount.Text = tabla.Rows.Count.ToString();
       }
       catch
       {
@@ -179,6 +181,9 @@ namespace Clave5_Grupo9
       {
         Form1.conexionBD.Close();
       }
+            lblFrom.Text = "";
+            lblTo.Text = "";
+            
     }
 
     private void comprobarConexionToolStripMenuItem_Click(object sender, EventArgs e)

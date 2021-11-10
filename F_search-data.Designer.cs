@@ -169,18 +169,16 @@
             this.lblTo.AutoSize = true;
             this.lblTo.Location = new System.Drawing.Point(495, 450);
             this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(35, 13);
+            this.lblTo.Size = new System.Drawing.Size(0, 13);
             this.lblTo.TabIndex = 8;
-            this.lblTo.Text = "label9";
             // 
             // lblFrom
             // 
             this.lblFrom.AutoSize = true;
             this.lblFrom.Location = new System.Drawing.Point(495, 421);
             this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(35, 13);
+            this.lblFrom.Size = new System.Drawing.Size(0, 13);
             this.lblFrom.TabIndex = 7;
-            this.lblFrom.Text = "label8";
             // 
             // label7
             // 
@@ -214,9 +212,8 @@
             this.lblCount.AutoSize = true;
             this.lblCount.Location = new System.Drawing.Point(305, 412);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(35, 13);
+            this.lblCount.Size = new System.Drawing.Size(0, 13);
             this.lblCount.TabIndex = 3;
-            this.lblCount.Text = "label2";
             // 
             // label1
             // 
