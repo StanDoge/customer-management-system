@@ -133,7 +133,7 @@
             // 
             // TbCity
             // 
-            this.TbCity.Location = new System.Drawing.Point(118, 132);
+            this.TbCity.Location = new System.Drawing.Point(123, 133);
             this.TbCity.Name = "TbCity";
             this.TbCity.Size = new System.Drawing.Size(318, 20);
             this.TbCity.TabIndex = 12;
