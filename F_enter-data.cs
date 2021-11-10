@@ -14,6 +14,7 @@ namespace Clave5_Grupo9
   public partial class F_enter_data : Form
   {
     Customer defaultCustomer = new Customer();
+    int counter = 1;
 
     public F_enter_data()
     {
@@ -246,9 +247,9 @@ namespace Clave5_Grupo9
       insertar1.Connection = Form1.conexionBD;
       insertar2.Connection = Form1.conexionBD;
       insertar3.Connection = Form1.conexionBD;
-      insertar1.CommandText = "INSERT INTO customers(full_name,dui,address,birthday,phone,workplace,total_income,state) VALUES ('" + defaultCustomer.fullName + "','" + defaultCustomer.DUI + "','" + defaultCustomer.address + "','" + defaultCustomer.birthday + "','" + defaultCustomer.phoneNumber + "','" + defaultCustomer.workPlace + "','" + defaultCustomer.totalIncome + "','" + defaultCustomer.state + "');";
-      insertar2.CommandText = "INSERT INTO openings(date) VALUES ('" + defaultCustomer.openning.date + "');";
-      insertar3.CommandText = "INSERT INTO cards(card_type,card_limit,interest_rate) VALUES ('" + defaultCustomer.openning.card.ToString() + "','" + defaultCustomer.openning.cardLimit + "','" + defaultCustomer.openning.interestRate + "');";
+      insertar1.CommandText = "INSERT INTO customers(full_name,dui,address,birthday,phone,workplace,total_income,state) VALUES ('"+ defaultCustomer.fullName + "  ','" + defaultCustomer.DUI +  "  ',  '  " + defaultCustomer.address + "  ',  '  " + defaultCustomer.birthday + "  ','  " + defaultCustomer.phoneNumber + "  ','  " + defaultCustomer.workPlace +   "  ',  '  " + defaultCustomer.totalIncome + "',  '  " + defaultCustomer.state + "');";
+      insertar2.CommandText = "INSERT INTO cards(card_type,card_limit,interest_rate,customer_id) VALUES (' "  + defaultCustomer.openning.card.ToString() + "', ' " + defaultCustomer.openning.cardLimit + "','" + defaultCustomer.openning.interestRate + "','" + counter + "');";
+      insertar3.CommandText = "INSERT INTO openings(date,customer_id,card_id) VALUES (' "  + defaultCustomer.openning.date + "', ' " + counter + "', ' " + counter + "');";
 
       try
       {
@@ -271,6 +272,7 @@ namespace Clave5_Grupo9
       {
         MessageBox.Show("Todo bien capo");
         Form1.conexionBD.Close();
+        counter += 1;
       }
     }
 
