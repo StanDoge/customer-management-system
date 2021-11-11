@@ -44,10 +44,10 @@ namespace Clave5_Grupo9
       bool DUIValidate = int.TryParse(TbID.Text, out defaultCustomer.DUI);
       bool phoneValidate = int.TryParse(TbPhone.Text, out defaultCustomer.phoneNumber);
       bool mainIncome = double.TryParse(TbIncome.Text, out double income);
-      bool otherIncome = double.TryParse(TbIncome.Text, out double othIcome);
+      bool otherIncome = double.TryParse(TbOtherIncome.Text, out double othIcome);
       bool rate = double.TryParse(TbInterestRate.Text, out addInterest);
 
-      if(!DUIValidate || !phoneValidate || !mainIncome || !otherIncome || !rate)
+      if(!DUIValidate || !phoneValidate || !mainIncome || !otherIncome || !rate) 
       {
         MessageBox.Show("El DUI, numero de telefono o ingresos deben de ser valores numericos");
         return;
