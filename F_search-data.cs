@@ -78,7 +78,7 @@ namespace Clave5_Grupo9
       dateToSearch = dtpToSearch.Value.Date.ToString("yyyy-MM-dd");
 
       btnSearch.Enabled = true;
-  
+
 
       DateTime a = Convert.ToDateTime(dtpFromSearch.Text);
       DateTime b = Convert.ToDateTime(dtpToSearch.Text);
@@ -110,35 +110,35 @@ namespace Clave5_Grupo9
         validDate();
 
       }
-           
-        //Inicializa una nueva instancia de la clase MySqlCommand.
-        MySqlCommand consulta = new MySqlCommand();
-        Form1.conexionBD.Open(); //se abre la conexion de la variable global declara en la parte superior del formulario
-                                    //Instancia para conexión a MySQL, recibe la cadena de conexión
-        consulta.Connection = Form1.conexionBD;
-        //consulta.CommandText = (" select* from customers  JOIN openings ON customers.customer_id=openings.customer_id  JOIN cards ON customers.customer_id=cards.customer_id; ");
-        consulta.CommandText = (" select* from customers left JOIN openings ON customers.customer_id=openings.customer_id left join cards on  customers.customer_id=cards.customer_id where openings.date between '" + dateFromSearch + "' and '" +dateToSearch+ "'");
 
-        try
-        {
-            //Inicializa una nueva instancia de la clase MySqlDataAdapter con
-            // el MySqlCommand especificado como propiedad SelectCommand.
-            MySqlDataAdapter adaptadorMySQL = new MySqlDataAdapter();
-            adaptadorMySQL.SelectCommand = consulta;
-            DataTable tabla = new DataTable();
-            adaptadorMySQL.Fill(tabla);
-            dgSearch.DataSource = tabla;
-            lblCount.Text = tabla.Rows.Count.ToString();
-            }
-        catch
-        {
-        }
-        finally
-        {
-            Form1.conexionBD.Close();
-        }
-            
-        }
+      //Inicializa una nueva instancia de la clase MySqlCommand.
+      MySqlCommand consulta = new MySqlCommand();
+      Form1.conexionBD.Open(); //se abre la conexion de la variable global declara en la parte superior del formulario
+                               //Instancia para conexión a MySQL, recibe la cadena de conexión
+      consulta.Connection = Form1.conexionBD;
+      //consulta.CommandText = (" select* from customers  JOIN openings ON customers.customer_id=openings.customer_id  JOIN cards ON customers.customer_id=cards.customer_id; ");
+      consulta.CommandText = (" select* from customers left JOIN openings ON customers.customer_id=openings.customer_id left join cards on  customers.customer_id=cards.customer_id where openings.date between '" + dateFromSearch + "' and '" + dateToSearch + "'");
+
+      try
+      {
+        //Inicializa una nueva instancia de la clase MySqlDataAdapter con
+        // el MySqlCommand especificado como propiedad SelectCommand.
+        MySqlDataAdapter adaptadorMySQL = new MySqlDataAdapter();
+        adaptadorMySQL.SelectCommand = consulta;
+        DataTable tabla = new DataTable();
+        adaptadorMySQL.Fill(tabla);
+        dgSearch.DataSource = tabla;
+        lblCount.Text = tabla.Rows.Count.ToString();
+      }
+      catch
+      {
+      }
+      finally
+      {
+        Form1.conexionBD.Close();
+      }
+
+    }
 
     //limpiar todos los campos
     private void btnClear_Click(object sender, EventArgs e)
@@ -181,9 +181,9 @@ namespace Clave5_Grupo9
       {
         Form1.conexionBD.Close();
       }
-            lblFrom.Text = "";
-            lblTo.Text = "";
-            
+      lblFrom.Text = "";
+      lblTo.Text = "";
+
     }
 
     private void comprobarConexionToolStripMenuItem_Click(object sender, EventArgs e)
