@@ -14,7 +14,6 @@ namespace Clave5_Grupo9
   public partial class F_enter_data : Form
   {
     Customer defaultCustomer = new Customer();
-    int counter = 1;
 
     public F_enter_data()
     {
@@ -106,7 +105,8 @@ namespace Clave5_Grupo9
             }
       }
 
-      //comprobacion de que es apto para el tipo de tarjeta elegido
+      ///<summary> En este bloque de codigo se valida si el usuario es apto para obtener la categoria de tarjeta seleccionada </summary>
+      ///<remarks> Cuando pasa la condicion y es apto se ejecuta el metodo sendData() que recibe como argumentos los datos del cliente</remarks>
       switch (indexOfSelections)
       {
         case 0:
@@ -118,6 +118,7 @@ namespace Clave5_Grupo9
             LblStatus.Text = "Aprobado";
             if (defaultCustomer.state == 1)
             {
+              //Metodo que ejecuta el insert con los valores que se le pasan como argumentos 
               Validation.sendData(defaultCustomer.fullName, defaultCustomer.DUI,defaultCustomer.address, defaultCustomer.birthday,defaultCustomer.phoneNumber,defaultCustomer.workPlace,defaultCustomer.totalIncome, defaultCustomer.state, defaultCustomer.openning.card.ToString(), defaultCustomer.openning.cardLimit, defaultCustomer.openning.interestRate,defaultCustomer.openning.date );
             }
           }
@@ -162,6 +163,7 @@ namespace Clave5_Grupo9
           }
           break;
       }
+
       ingresoTotal = Convert.ToDouble(TbIncome.Text) + Convert.ToDouble(TbOtherIncome.Text);
 
       F_Confirm.nombre = defaultCustomer.fullName;
@@ -181,9 +183,7 @@ namespace Clave5_Grupo9
 
     }
 
-    /// <summary>
-    /// Limpia los inputs del Form
-    /// </summary>
+    /// <summary> Limpia los inputs o controles </summary>
     private void BtnNew_Click(object sender, EventArgs e)
     {
       TbFirstName.ResetText();
@@ -203,9 +203,7 @@ namespace Clave5_Grupo9
     }
 
 
-    /// <summary>
-    /// Limpia los controles de FORM
-    /// </summary>
+    /// <summary> Limpia los controles de Forms </summary>
     public void btnClear_Click(object sender, EventArgs e)
 
     {
