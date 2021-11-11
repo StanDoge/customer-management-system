@@ -24,6 +24,7 @@ namespace Clave5_Grupo9
     string dateToSearch;
     string displayFrom;
     string displayTo;
+   
 
 
 
@@ -40,8 +41,8 @@ namespace Clave5_Grupo9
     private void dtpFromSearch_ValueChanged(object sender, EventArgs e)
     {
       dateFromSearch = dtpFromSearch.Value.Date.ToString("yyyy-MM-dd");
-
-      btnSearch.Enabled = true;
+           
+            btnSearch.Enabled = true;
 
 
     }
@@ -76,7 +77,7 @@ namespace Clave5_Grupo9
 
 
       dateToSearch = dtpToSearch.Value.Date.ToString("yyyy-MM-dd");
-
+            
       btnSearch.Enabled = true;
 
 
@@ -117,7 +118,7 @@ namespace Clave5_Grupo9
                                //Instancia para conexión a MySQL, recibe la cadena de conexión
       consulta.Connection = Form1.conexionBD;
       //consulta.CommandText = (" select* from customers  JOIN openings ON customers.customer_id=openings.customer_id  JOIN cards ON customers.customer_id=cards.customer_id; ");
-      consulta.CommandText = (" select* from customers left JOIN openings ON customers.customer_id=openings.customer_id left join cards on  customers.customer_id=cards.customer_id where openings.date between '" + dateFromSearch + "' and '" + dateToSearch + "'");
+      consulta.CommandText = (" SELECT * FROM clave5_grupo9db.full_table where op.date between '" + dateFromSearch + "' and '" + dateToSearch + "'");
 
       try
       {
@@ -161,7 +162,7 @@ namespace Clave5_Grupo9
                                //Instancia para conexión a MySQL, recibe la cadena de conexión
       consulta.Connection = Form1.conexionBD;
       //consulta.CommandText = (" select* from customers  JOIN openings ON customers.customer_id=openings.customer_id  JOIN cards ON customers.customer_id=cards.customer_id; ");
-      consulta.CommandText = (" select* from customers left JOIN openings ON customers.customer_id=openings.customer_id left join cards on  customers.customer_id=cards.customer_id ");
+      consulta.CommandText = ("  SELECT * FROM clave5_grupo9db.full_table");
 
       try
       {
