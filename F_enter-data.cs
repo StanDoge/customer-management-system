@@ -21,7 +21,6 @@ namespace Clave5_Grupo9
     }
 
 
-    bool number = false;//Variable que permitirá donde deban ir solamente números
     double addInterest;
     double ingresoTotal;
 
@@ -36,81 +35,107 @@ namespace Clave5_Grupo9
       defaultCustomer.workPlace = TbWorkPlace.Text;
 
 
-      //Validación de entradas en los textbox para impedir que queden vacios y donde deban ir números solo acepte números.
+      if (!Validation.controlsNull(defaultCustomer.fullName, TbID.Text, defaultCustomer.address, defaultCustomer.birthday, TbPhone.Text, defaultCustomer.workPlace, TbIncome.Text, TbOtherIncome.Text, TbInterestRate.Text))
+      {
+        MessageBox.Show("Error en los valores de entrada");
+        return;
+      }
+
+      bool DUIValidate = int.TryParse(TbID.Text, out defaultCustomer.DUI);
+      bool phoneValidate = int.TryParse(TbPhone.Text, out defaultCustomer.phoneNumber);
+      bool mainIncome = double.TryParse(TbIncome.Text, out double income);
+      bool otherIncome = double.TryParse(TbIncome.Text, out double othIcome);
+      bool rate = double.TryParse(TbInterestRate.Text, out addInterest);
+
+      if(!DUIValidate || !phoneValidate || !mainIncome || !otherIncome || !rate)
+      {
+        MessageBox.Show("El DUI, numero de telefono o ingresos deben de ser valores numericos");
+        return;
+      }
+
+      defaultCustomer.totalIncome = income + othIcome;      
+
+      if (addInterest < 0.30 || addInterest > 0.40)
+      {
+        MessageBox.Show("El monto de interes asignado debe de estar entre el 30% y 40% porciento");
+        return;
+      }
+
       int indexOfSelections = CbCardsTypes.SelectedIndex;
 
-      if (string.IsNullOrEmpty(defaultCustomer.fullName))
-      {
-        MessageBox.Show("Debe insertar el nombre completo");
-        return;
-      }
+      //if (string.IsNullOrEmpty(defaultCustomer.fullName))
+      //{
+      //  MessageBox.Show("Debe insertar el nombre completo");
+      //  return;
+      //}
 
-      number = int.TryParse(TbID.Text, out defaultCustomer.DUI);
-      if (!number || string.IsNullOrEmpty(TbID.Text))
-      {
-        MessageBox.Show("El dato ingresado en DUI/ID no es válido o el campo está vacío");
-        return;
-      }
-      defaultCustomer.DUI = int.Parse((TbID.Text));
+      //number = int.TryParse(TbID.Text, out defaultCustomer.DUI);
+      //if (!number || string.IsNullOrEmpty(TbID.Text))
+      //{
+      //  MessageBox.Show("El dato ingresado en DUI/ID no es válido o el campo está vacío");
+      //  return;
+      //}
+      //defaultCustomer.DUI = int.Parse((TbID.Text));
 
-      if (string.IsNullOrEmpty(defaultCustomer.address))
-      {
-        MessageBox.Show("Debe ingresar su dirección completa");
-        return;
-      }
+      //if (string.IsNullOrEmpty(defaultCustomer.address))
+      //{
+      //  MessageBox.Show("Debe ingresar su dirección completa");
+      //  return;
+      //}
 
-      if (string.IsNullOrEmpty(defaultCustomer.birthday))
-      {
-        MessageBox.Show("No ha ingresado una fecha de nacimiento");
-        return;
-      }
+      //if (string.IsNullOrEmpty(defaultCustomer.birthday))
+      //{
+      //  MessageBox.Show("No ha ingresado una fecha de nacimiento");
+      //  return;
+      //}
 
-      number = int.TryParse(TbPhone.Text, out defaultCustomer.phoneNumber);
-      if (!number || string.IsNullOrEmpty(TbPhone.Text))
-      {
-        MessageBox.Show("El Teléfono no es válido o el campo está vacío");
-        return;
-      }
-      defaultCustomer.phoneNumber = int.Parse(TbPhone.Text);
+      //number = int.TryParse(TbPhone.Text, out defaultCustomer.phoneNumber);
+      //if (!number || string.IsNullOrEmpty(TbPhone.Text))
+      //{
+      //  MessageBox.Show("El Teléfono no es válido o el campo está vacío");
+      //  return;
+      //}
+      //defaultCustomer.phoneNumber = int.Parse(TbPhone.Text);
 
-      if (string.IsNullOrEmpty(defaultCustomer.workPlace))
-      {
-        MessageBox.Show("No ha ingresado un lugar de trabajo");
-        return;
-      }
+      //if (string.IsNullOrEmpty(defaultCustomer.workPlace))
+      //{
+      //  MessageBox.Show("No ha ingresado un lugar de trabajo");
+      //  return;
+      //}
 
 
-      number = double.TryParse(TbIncome.Text, out defaultCustomer.totalIncome);
-      if (!number || string.IsNullOrEmpty(TbIncome.Text))
-      {
-        MessageBox.Show("No ha ingresado un sueldo o ingreso principal");
-        return;
-      }
+      //number = double.TryParse(TbIncome.Text, out defaultCustomer.totalIncome);
+      //if (!number || string.IsNullOrEmpty(TbIncome.Text))
+      //{
+      //  MessageBox.Show("No ha ingresado un sueldo o ingreso principal");
+      //  return;
+      //}
 
-      number = double.TryParse(TbOtherIncome.Text, out defaultCustomer.totalIncome);
-      if (!number || string.IsNullOrEmpty(TbOtherIncome.Text))
-      {
-        MessageBox.Show("El dato ingresado en Otros Ingresos no es válido o el campo está vacío. Ingrese el número cero si no posee otros ingresos");
-        return;
-      }
-      defaultCustomer.totalIncome = double.Parse(TbIncome.Text) + double.Parse(TbOtherIncome.Text);
+      //number = double.TryParse(TbOtherIncome.Text, out defaultCustomer.totalIncome);
+      //if (!number || string.IsNullOrEmpty(TbOtherIncome.Text))
+      //{
+      //  MessageBox.Show("El dato ingresado en Otros Ingresos no es válido o el campo está vacío. Ingrese el número cero si no posee otros ingresos");
+      //  return;
+      //}
+      //defaultCustomer.totalIncome = double.Parse(TbIncome.Text) + double.Parse(TbOtherIncome.Text);
 
-      number = double.TryParse(TbInterestRate.Text, out addInterest);
-      if (!number || !string.IsNullOrEmpty(TbInterestRate.Text) )
-      {
-            if(addInterest < 0.30 || addInterest > 0.40)
-            {
-                    MessageBox.Show("La tasa de interés no es válida o el campo se encuntra vacío");
-                    return;
-            }
-      }
+      //number = double.TryParse(TbInterestRate.Text, out addInterest);
+      //if (!number || !string.IsNullOrEmpty(TbInterestRate.Text) )
+      //{
+      //      if(addInterest < 0.30 || addInterest > 0.40)
+      //      {
+      //              MessageBox.Show("La tasa de interés no es válida o el campo se encuntra vacío");
+      //              return;
+      //      }
+      //}
+
 
       ///<summary> En este bloque de codigo se valida si el usuario es apto para obtener la categoria de tarjeta seleccionada </summary>
       ///<remarks> Cuando pasa la condicion y es apto se ejecuta el metodo sendData() que recibe como argumentos los datos del cliente</remarks>
       switch (indexOfSelections)
       {
         case 0:
-          if (defaultCustomer.totalIncome >= 400 )
+          if (defaultCustomer.totalIncome >= 400)
           {
             defaultCustomer.state = 1;
             defaultCustomer.openning = new Card(400, addInterest, cardTypes.azul);
@@ -119,7 +144,7 @@ namespace Clave5_Grupo9
             if (defaultCustomer.state == 1)
             {
               //Metodo que ejecuta el insert con los valores que se le pasan como argumentos 
-              Validation.sendData(defaultCustomer.fullName, defaultCustomer.DUI,defaultCustomer.address, defaultCustomer.birthday,defaultCustomer.phoneNumber,defaultCustomer.workPlace,defaultCustomer.totalIncome, defaultCustomer.state, defaultCustomer.openning.card.ToString(), defaultCustomer.openning.cardLimit, defaultCustomer.openning.interestRate,defaultCustomer.openning.date );
+              Validation.sendData(defaultCustomer.fullName, defaultCustomer.DUI, defaultCustomer.address, defaultCustomer.birthday, defaultCustomer.phoneNumber, defaultCustomer.workPlace, defaultCustomer.totalIncome, defaultCustomer.state, defaultCustomer.openning.card.ToString(), defaultCustomer.openning.cardLimit, defaultCustomer.openning.interestRate, defaultCustomer.openning.date);
             }
           }
           else
@@ -129,14 +154,14 @@ namespace Clave5_Grupo9
           }
           break;
         case 1:
-          if (defaultCustomer.totalIncome > 500 )
+          if (defaultCustomer.totalIncome > 500)
           {
             defaultCustomer.state = 1;
             defaultCustomer.openning = new Card(600, addInterest, cardTypes.dorado);
             LblStatus.Text = "Aprobado";
             if (defaultCustomer.state == 1)
             {
-              Validation.sendData(defaultCustomer.fullName, defaultCustomer.DUI,defaultCustomer.address, defaultCustomer.birthday,defaultCustomer.phoneNumber,defaultCustomer.workPlace,defaultCustomer.totalIncome, defaultCustomer.state, defaultCustomer.openning.card.ToString(), defaultCustomer.openning.cardLimit, defaultCustomer.openning.interestRate,defaultCustomer.openning.date );
+              Validation.sendData(defaultCustomer.fullName, defaultCustomer.DUI, defaultCustomer.address, defaultCustomer.birthday, defaultCustomer.phoneNumber, defaultCustomer.workPlace, defaultCustomer.totalIncome, defaultCustomer.state, defaultCustomer.openning.card.ToString(), defaultCustomer.openning.cardLimit, defaultCustomer.openning.interestRate, defaultCustomer.openning.date);
             }
           }
           else
@@ -153,7 +178,7 @@ namespace Clave5_Grupo9
             LblStatus.Text = "Aprobado";
             if (defaultCustomer.state == 1)
             {
-              Validation.sendData(defaultCustomer.fullName, defaultCustomer.DUI,defaultCustomer.address, defaultCustomer.birthday,defaultCustomer.phoneNumber,defaultCustomer.workPlace,defaultCustomer.totalIncome, defaultCustomer.state, defaultCustomer.openning.card.ToString(), defaultCustomer.openning.cardLimit, defaultCustomer.openning.interestRate,defaultCustomer.openning.date );
+              Validation.sendData(defaultCustomer.fullName, defaultCustomer.DUI, defaultCustomer.address, defaultCustomer.birthday, defaultCustomer.phoneNumber, defaultCustomer.workPlace, defaultCustomer.totalIncome, defaultCustomer.state, defaultCustomer.openning.card.ToString(), defaultCustomer.openning.cardLimit, defaultCustomer.openning.interestRate, defaultCustomer.openning.date);
             }
           }
           else
@@ -232,13 +257,13 @@ namespace Clave5_Grupo9
       }
 
     }
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            F_option opción = new F_option();
-            opción.Show();
-            Hide();
-        }
+    private void btnReturn_Click(object sender, EventArgs e)
+    {
+      F_option opción = new F_option();
+      opción.Show();
+      Hide();
     }
+  }
 }
 
 
