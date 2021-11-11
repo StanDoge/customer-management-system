@@ -118,7 +118,7 @@ namespace Clave5_Grupo9
             LblStatus.Text = "Aprobado";
             if (defaultCustomer.state == 1)
             {
-              sendData();
+              Validation.sendData(defaultCustomer.fullName, defaultCustomer.DUI,defaultCustomer.address, defaultCustomer.birthday,defaultCustomer.phoneNumber,defaultCustomer.workPlace,defaultCustomer.totalIncome, defaultCustomer.state, defaultCustomer.openning.card.ToString(), defaultCustomer.openning.cardLimit, defaultCustomer.openning.interestRate,defaultCustomer.openning.date );
             }
           }
           else
@@ -135,7 +135,7 @@ namespace Clave5_Grupo9
             LblStatus.Text = "Aprobado";
             if (defaultCustomer.state == 1)
             {
-              sendData();
+              Validation.sendData(defaultCustomer.fullName, defaultCustomer.DUI,defaultCustomer.address, defaultCustomer.birthday,defaultCustomer.phoneNumber,defaultCustomer.workPlace,defaultCustomer.totalIncome, defaultCustomer.state, defaultCustomer.openning.card.ToString(), defaultCustomer.openning.cardLimit, defaultCustomer.openning.interestRate,defaultCustomer.openning.date );
             }
           }
           else
@@ -152,7 +152,7 @@ namespace Clave5_Grupo9
             LblStatus.Text = "Aprobado";
             if (defaultCustomer.state == 1)
             {
-              sendData();
+              Validation.sendData(defaultCustomer.fullName, defaultCustomer.DUI,defaultCustomer.address, defaultCustomer.birthday,defaultCustomer.phoneNumber,defaultCustomer.workPlace,defaultCustomer.totalIncome, defaultCustomer.state, defaultCustomer.openning.card.ToString(), defaultCustomer.openning.cardLimit, defaultCustomer.openning.interestRate,defaultCustomer.openning.date );
             }
           }
           else
@@ -234,48 +234,6 @@ namespace Clave5_Grupo9
       }
 
     }
-
-    /// <summary>
-    /// Hace la conexion con la BD y ejecuta el INSERT
-    /// </summary>
-    void sendData()
-    {
-      MySqlCommand insertar1 = new MySqlCommand();
-      MySqlCommand insertar2 = new MySqlCommand();
-      MySqlCommand insertar3 = new MySqlCommand();
-      Form1.conexionBD.Open();
-      insertar1.Connection = Form1.conexionBD;
-      insertar2.Connection = Form1.conexionBD;
-      insertar3.Connection = Form1.conexionBD;
-      insertar1.CommandText = "INSERT INTO customers(full_name,dui,address,birthday,phone,workplace,total_income,state) VALUES ('"+ defaultCustomer.fullName + "  ','" + defaultCustomer.DUI +  "  ',  '  " + defaultCustomer.address + "  ',  '  " + defaultCustomer.birthday + "  ','  " + defaultCustomer.phoneNumber + "  ','  " + defaultCustomer.workPlace +   "  ',  '  " + defaultCustomer.totalIncome + "',  '  " + defaultCustomer.state + "');";
-      insertar2.CommandText = "INSERT INTO cards(card_type,card_limit,interest_rate,customer_id) VALUES (' "  + defaultCustomer.openning.card.ToString() + "', ' " + defaultCustomer.openning.cardLimit + "','" + defaultCustomer.openning.interestRate + "','" + counter + "');";
-      insertar3.CommandText = "INSERT INTO openings(date,customer_id,card_id) VALUES (' "  + defaultCustomer.openning.date + "', ' " + counter + "', ' " + counter + "');";
-
-      try
-      {
-        MySqlDataAdapter adaptador = new MySqlDataAdapter();
-        MySqlDataAdapter adaptador2 = new MySqlDataAdapter();
-        MySqlDataAdapter adaptador3 = new MySqlDataAdapter();
-        adaptador.SelectCommand = insertar1;
-        adaptador2.SelectCommand = insertar2;
-        adaptador3.SelectCommand = insertar3;
-        DataTable tabla = new DataTable();
-        adaptador.Fill(tabla); //ejecutar el insert
-        adaptador2.Fill(tabla); 
-        adaptador3.Fill(tabla); 
-      }
-      catch (ArgumentException excepcion)
-      {
-        MessageBox.Show($"Algo salio mal {excepcion}");
-      }
-      finally
-      {
-        MessageBox.Show("Todo bien capo");
-        Form1.conexionBD.Close();
-        counter += 1;
-      }
-    }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             F_option opción = new F_option();

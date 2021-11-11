@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clave5_Grupo9
 {
-  enum cardTypes
+  public enum cardTypes
   {
     azul,
     dorado,
