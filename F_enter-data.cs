@@ -52,7 +52,7 @@ namespace Clave5_Grupo9
 
       if(!DUIValidate || !phoneValidate || !mainIncome || !otherIncome || !rate) 
       {
-        MessageBox.Show("El DUI, numero de telefono e ingresos deben de ser valores numericos");
+        MessageBox.Show("El DUI, numero de telefono e ingresos deben de ser valores numericos. El DUI no debe llevar guiones, y el interés debe ser escrito en decimales");
         return;
       }
 

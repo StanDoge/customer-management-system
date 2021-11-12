@@ -62,9 +62,11 @@ namespace Clave5_Grupo9
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(28, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 13);
+            this.label1.Size = new System.Drawing.Size(232, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Por favor, confirme los datos insertados";
             // 
@@ -73,7 +75,7 @@ namespace Clave5_Grupo9
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(30, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.Size = new System.Drawing.Size(109, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre completo:";
             // 
@@ -82,7 +84,7 @@ namespace Clave5_Grupo9
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(30, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "DUI:";
             // 
@@ -91,7 +93,7 @@ namespace Clave5_Grupo9
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(30, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Dirección:";
             // 
@@ -100,7 +102,7 @@ namespace Clave5_Grupo9
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(30, 116);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 13);
+            this.label5.Size = new System.Drawing.Size(129, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Fecha de nacimiento:";
             // 
@@ -109,7 +111,7 @@ namespace Clave5_Grupo9
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(30, 147);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Teléfono";
             // 
@@ -118,7 +120,7 @@ namespace Clave5_Grupo9
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(30, 178);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.Size = new System.Drawing.Size(100, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Lugar de trabajo";
             // 
@@ -127,7 +129,7 @@ namespace Clave5_Grupo9
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(30, 209);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 13);
+            this.label8.Size = new System.Drawing.Size(97, 13);
             this.label8.TabIndex = 7;
             this.label8.Text = "Ingresos totales";
             // 
@@ -136,7 +138,7 @@ namespace Clave5_Grupo9
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(30, 240);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.Size = new System.Drawing.Size(46, 13);
             this.label9.TabIndex = 8;
             this.label9.Text = "Estado";
             // 
@@ -158,6 +160,8 @@ namespace Clave5_Grupo9
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(31, 38);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(397, 273);
@@ -236,6 +240,8 @@ namespace Clave5_Grupo9
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(31, 317);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(397, 105);
@@ -271,7 +277,7 @@ namespace Clave5_Grupo9
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(30, 70);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(80, 13);
+            this.label14.Size = new System.Drawing.Size(95, 13);
             this.label14.TabIndex = 13;
             this.label14.Text = "Tasa de interés";
             // 
@@ -280,7 +286,7 @@ namespace Clave5_Grupo9
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(30, 43);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 13);
+            this.label13.Size = new System.Drawing.Size(100, 13);
             this.label13.TabIndex = 12;
             this.label13.Text = "Límite de tarjeta";
             // 
@@ -289,7 +295,7 @@ namespace Clave5_Grupo9
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(30, 16);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 13);
+            this.label12.Size = new System.Drawing.Size(90, 13);
             this.label12.TabIndex = 11;
             this.label12.Text = "Tipo de tarjeta";
             // 
@@ -307,12 +313,15 @@ namespace Clave5_Grupo9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(456, 475);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "F_Confirm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Confirmar datos";
             this.Load += new System.EventHandler(this.F_Confirm_Load);
             this.groupBox1.ResumeLayout(false);

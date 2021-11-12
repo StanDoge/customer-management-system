@@ -59,7 +59,7 @@
             // 
             this.label3.Location = new System.Drawing.Point(113, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 17);
+            this.label3.Size = new System.Drawing.Size(124, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Rango de búsqueda";
             // 
@@ -110,6 +110,8 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(30, 511);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(768, 122);
@@ -148,14 +150,18 @@
             this.groupBox2.Controls.Add(this.lblCount);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dgSearch);
-            this.groupBox2.Location = new System.Drawing.Point(30, 18);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox2.Location = new System.Drawing.Point(30, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(765, 487);
+            this.groupBox2.Size = new System.Drawing.Size(765, 478);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
             // btnGetAll
             // 
+            this.btnGetAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetAll.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGetAll.Location = new System.Drawing.Point(604, 19);
             this.btnGetAll.Name = "btnGetAll";
             this.btnGetAll.Size = new System.Drawing.Size(154, 23);
@@ -185,7 +191,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(426, 450);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Hasta:";
             // 
@@ -194,7 +200,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(426, 421);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.Size = new System.Drawing.Size(47, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Desde:";
             // 
@@ -203,7 +209,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(426, 378);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.Size = new System.Drawing.Size(102, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Búsqueda actual";
             // 
@@ -220,7 +226,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(119, 412);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 13);
+            this.label1.Size = new System.Drawing.Size(197, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cantidad de aperturas mostradas:";
             // 
@@ -264,12 +270,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(831, 687);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "F_search_data";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

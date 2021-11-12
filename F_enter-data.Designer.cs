@@ -81,9 +81,11 @@
             this.GbClientData.Controls.Add(this.label3);
             this.GbClientData.Controls.Add(this.label2);
             this.GbClientData.Controls.Add(this.label1);
+            this.GbClientData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GbClientData.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.GbClientData.Location = new System.Drawing.Point(13, 13);
             this.GbClientData.Name = "GbClientData";
-            this.GbClientData.Size = new System.Drawing.Size(460, 325);
+            this.GbClientData.Size = new System.Drawing.Size(474, 325);
             this.GbClientData.TabIndex = 0;
             this.GbClientData.TabStop = false;
             this.GbClientData.Text = "Datos del Cliente";
@@ -91,15 +93,18 @@
             // DtpDateOfBirth
             // 
             this.DtpDateOfBirth.CustomFormat = "yyyy-MM-dd";
+            this.DtpDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpDateOfBirth.Location = new System.Drawing.Point(123, 168);
+            this.DtpDateOfBirth.Location = new System.Drawing.Point(143, 168);
             this.DtpDateOfBirth.Name = "DtpDateOfBirth";
             this.DtpDateOfBirth.Size = new System.Drawing.Size(318, 20);
             this.DtpDateOfBirth.TabIndex = 23;
             // 
             // TbOtherIncome
             // 
-            this.TbOtherIncome.Location = new System.Drawing.Point(291, 280);
+            this.TbOtherIncome.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TbOtherIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbOtherIncome.Location = new System.Drawing.Point(311, 280);
             this.TbOtherIncome.Name = "TbOtherIncome";
             this.TbOtherIncome.Size = new System.Drawing.Size(150, 20);
             this.TbOtherIncome.TabIndex = 20;
@@ -108,7 +113,9 @@
             // 
             // TbIncome
             // 
-            this.TbIncome.Location = new System.Drawing.Point(123, 280);
+            this.TbIncome.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TbIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbIncome.Location = new System.Drawing.Point(143, 280);
             this.TbIncome.Name = "TbIncome";
             this.TbIncome.Size = new System.Drawing.Size(150, 20);
             this.TbIncome.TabIndex = 19;
@@ -117,7 +124,9 @@
             // 
             // TbWorkPlace
             // 
-            this.TbWorkPlace.Location = new System.Drawing.Point(123, 245);
+            this.TbWorkPlace.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TbWorkPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbWorkPlace.Location = new System.Drawing.Point(143, 245);
             this.TbWorkPlace.Name = "TbWorkPlace";
             this.TbWorkPlace.Size = new System.Drawing.Size(318, 20);
             this.TbWorkPlace.TabIndex = 18;
@@ -126,14 +135,18 @@
             // 
             // TbPhone
             // 
-            this.TbPhone.Location = new System.Drawing.Point(123, 208);
+            this.TbPhone.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbPhone.Location = new System.Drawing.Point(143, 208);
             this.TbPhone.Name = "TbPhone";
             this.TbPhone.Size = new System.Drawing.Size(318, 20);
             this.TbPhone.TabIndex = 17;
             // 
             // TbCity
             // 
-            this.TbCity.Location = new System.Drawing.Point(123, 133);
+            this.TbCity.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCity.Location = new System.Drawing.Point(143, 131);
             this.TbCity.Name = "TbCity";
             this.TbCity.Size = new System.Drawing.Size(318, 20);
             this.TbCity.TabIndex = 12;
@@ -142,7 +155,9 @@
             // 
             // TbNeighborhood
             // 
-            this.TbNeighborhood.Location = new System.Drawing.Point(291, 95);
+            this.TbNeighborhood.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TbNeighborhood.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbNeighborhood.Location = new System.Drawing.Point(311, 95);
             this.TbNeighborhood.Name = "TbNeighborhood";
             this.TbNeighborhood.Size = new System.Drawing.Size(150, 20);
             this.TbNeighborhood.TabIndex = 11;
@@ -151,7 +166,9 @@
             // 
             // TbHouse
             // 
-            this.TbHouse.Location = new System.Drawing.Point(123, 95);
+            this.TbHouse.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TbHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbHouse.Location = new System.Drawing.Point(143, 95);
             this.TbHouse.Name = "TbHouse";
             this.TbHouse.Size = new System.Drawing.Size(150, 20);
             this.TbHouse.TabIndex = 10;
@@ -160,14 +177,18 @@
             // 
             // TbID
             // 
-            this.TbID.Location = new System.Drawing.Point(123, 59);
+            this.TbID.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbID.Location = new System.Drawing.Point(143, 59);
             this.TbID.Name = "TbID";
             this.TbID.Size = new System.Drawing.Size(318, 20);
             this.TbID.TabIndex = 9;
             // 
             // TbLastName
             // 
-            this.TbLastName.Location = new System.Drawing.Point(291, 23);
+            this.TbLastName.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbLastName.Location = new System.Drawing.Point(311, 23);
             this.TbLastName.Name = "TbLastName";
             this.TbLastName.Size = new System.Drawing.Size(150, 20);
             this.TbLastName.TabIndex = 8;
@@ -176,7 +197,9 @@
             // 
             // TbFirstName
             // 
-            this.TbFirstName.Location = new System.Drawing.Point(123, 23);
+            this.TbFirstName.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbFirstName.Location = new System.Drawing.Point(143, 23);
             this.TbFirstName.Name = "TbFirstName";
             this.TbFirstName.Size = new System.Drawing.Size(150, 20);
             this.TbFirstName.TabIndex = 7;
@@ -188,7 +211,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 283);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Ingresos:";
             // 
@@ -197,7 +220,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 248);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 13);
+            this.label6.Size = new System.Drawing.Size(108, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Lugar de Trabajo:";
             // 
@@ -206,7 +229,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 211);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Teléfono:";
             // 
@@ -215,7 +238,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 174);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 13);
+            this.label4.Size = new System.Drawing.Size(131, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Fecha de Nacimiento:";
             // 
@@ -224,7 +247,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Dirección:";
             // 
@@ -233,7 +256,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "N° de DUI/ID:";
             // 
@@ -242,13 +265,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.Size = new System.Drawing.Size(110, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre Completo:";
             // 
             // BtnNew
             // 
-            this.BtnNew.Location = new System.Drawing.Point(364, 410);
+            this.BtnNew.Location = new System.Drawing.Point(387, 404);
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(100, 23);
             this.BtnNew.TabIndex = 22;
@@ -258,7 +281,7 @@
             // 
             // BtnConfirm
             // 
-            this.BtnConfirm.Location = new System.Drawing.Point(364, 370);
+            this.BtnConfirm.Location = new System.Drawing.Point(387, 365);
             this.BtnConfirm.Name = "BtnConfirm";
             this.BtnConfirm.Size = new System.Drawing.Size(100, 23);
             this.BtnConfirm.TabIndex = 21;
@@ -274,9 +297,11 @@
             this.GbConfirmData.Controls.Add(this.CbCardsTypes);
             this.GbConfirmData.Controls.Add(this.label9);
             this.GbConfirmData.Controls.Add(this.label8);
+            this.GbConfirmData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GbConfirmData.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.GbConfirmData.Location = new System.Drawing.Point(12, 344);
             this.GbConfirmData.Name = "GbConfirmData";
-            this.GbConfirmData.Size = new System.Drawing.Size(318, 131);
+            this.GbConfirmData.Size = new System.Drawing.Size(346, 131);
             this.GbConfirmData.TabIndex = 1;
             this.GbConfirmData.TabStop = false;
             this.GbConfirmData.Text = "Confirmación de Datos";
@@ -284,15 +309,17 @@
             // LblStatus
             // 
             this.LblStatus.AutoSize = true;
-            this.LblStatus.Location = new System.Drawing.Point(151, 105);
+            this.LblStatus.Location = new System.Drawing.Point(180, 105);
             this.LblStatus.Name = "LblStatus";
-            this.LblStatus.Size = new System.Drawing.Size(36, 13);
+            this.LblStatus.Size = new System.Drawing.Size(41, 13);
             this.LblStatus.TabIndex = 6;
             this.LblStatus.Text = "Vacío";
             // 
             // TbInterestRate
             // 
-            this.TbInterestRate.Location = new System.Drawing.Point(154, 63);
+            this.TbInterestRate.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TbInterestRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbInterestRate.Location = new System.Drawing.Point(183, 63);
             this.TbInterestRate.Name = "TbInterestRate";
             this.TbInterestRate.Size = new System.Drawing.Size(150, 20);
             this.TbInterestRate.TabIndex = 5;
@@ -302,18 +329,20 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(6, 66);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(131, 13);
+            this.label10.Size = new System.Drawing.Size(157, 13);
             this.label10.TabIndex = 3;
             this.label10.Text = "Tasa de Interés a Asignar:";
             // 
             // CbCardsTypes
             // 
+            this.CbCardsTypes.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.CbCardsTypes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbCardsTypes.FormattingEnabled = true;
             this.CbCardsTypes.Items.AddRange(new object[] {
             "Azul",
             "Dorada",
             "Platino"});
-            this.CbCardsTypes.Location = new System.Drawing.Point(154, 23);
+            this.CbCardsTypes.Location = new System.Drawing.Point(183, 23);
             this.CbCardsTypes.Name = "CbCardsTypes";
             this.CbCardsTypes.Size = new System.Drawing.Size(150, 21);
             this.CbCardsTypes.TabIndex = 2;
@@ -324,7 +353,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 26);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(142, 13);
+            this.label9.Size = new System.Drawing.Size(171, 13);
             this.label9.TabIndex = 1;
             this.label9.Text = "Tipo de Tarjetas disponibles:";
             // 
@@ -333,13 +362,13 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(6, 105);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 13);
+            this.label8.Size = new System.Drawing.Size(114, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Estado del Cliente:";
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(364, 449);
+            this.btnReturn.Location = new System.Drawing.Point(387, 444);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(100, 23);
             this.btnReturn.TabIndex = 23;
@@ -351,12 +380,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 489);
+            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.ClientSize = new System.Drawing.Size(501, 486);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.BtnNew);
             this.Controls.Add(this.GbConfirmData);
             this.Controls.Add(this.GbClientData);
             this.Controls.Add(this.BtnConfirm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "F_enter_data";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar Datos";
