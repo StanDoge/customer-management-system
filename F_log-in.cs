@@ -33,25 +33,6 @@ namespace Clave5_Grupo9
     //
     //
     //
-
-    private void Form1_Load(object sender, EventArgs e)
-    {
-
-    }
-
-
-
-    private void TbInput_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void label1_Click(object sender, EventArgs e)
-    {
-
-    }
-
-
         void login()
         {
             F_option opción = new F_option();
@@ -91,10 +72,5 @@ namespace Clave5_Grupo9
         {
             this.Close();
         }
-
-      
-
-       
-
     }
 }

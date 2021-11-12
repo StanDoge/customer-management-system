@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GbClientData = new System.Windows.Forms.GroupBox();
             this.DtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.TbOtherIncome = new System.Windows.Forms.TextBox();
             this.TbIncome = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BtnNew = new System.Windows.Forms.Button();
             this.BtnConfirm = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GbConfirmData = new System.Windows.Forms.GroupBox();
             this.LblStatus = new System.Windows.Forms.Label();
             this.TbInterestRate = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -57,36 +57,36 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.GbClientData.SuspendLayout();
+            this.GbConfirmData.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // GbClientData
             // 
-            this.groupBox1.Controls.Add(this.DtpDateOfBirth);
-            this.groupBox1.Controls.Add(this.TbOtherIncome);
-            this.groupBox1.Controls.Add(this.TbIncome);
-            this.groupBox1.Controls.Add(this.TbWorkPlace);
-            this.groupBox1.Controls.Add(this.TbPhone);
-            this.groupBox1.Controls.Add(this.TbCity);
-            this.groupBox1.Controls.Add(this.TbNeighborhood);
-            this.groupBox1.Controls.Add(this.TbHouse);
-            this.groupBox1.Controls.Add(this.TbID);
-            this.groupBox1.Controls.Add(this.TbLastName);
-            this.groupBox1.Controls.Add(this.TbFirstName);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(460, 325);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos del Cliente";
+            this.GbClientData.Controls.Add(this.DtpDateOfBirth);
+            this.GbClientData.Controls.Add(this.TbOtherIncome);
+            this.GbClientData.Controls.Add(this.TbIncome);
+            this.GbClientData.Controls.Add(this.TbWorkPlace);
+            this.GbClientData.Controls.Add(this.TbPhone);
+            this.GbClientData.Controls.Add(this.TbCity);
+            this.GbClientData.Controls.Add(this.TbNeighborhood);
+            this.GbClientData.Controls.Add(this.TbHouse);
+            this.GbClientData.Controls.Add(this.TbID);
+            this.GbClientData.Controls.Add(this.TbLastName);
+            this.GbClientData.Controls.Add(this.TbFirstName);
+            this.GbClientData.Controls.Add(this.label7);
+            this.GbClientData.Controls.Add(this.label6);
+            this.GbClientData.Controls.Add(this.label5);
+            this.GbClientData.Controls.Add(this.label4);
+            this.GbClientData.Controls.Add(this.label3);
+            this.GbClientData.Controls.Add(this.label2);
+            this.GbClientData.Controls.Add(this.label1);
+            this.GbClientData.Location = new System.Drawing.Point(13, 13);
+            this.GbClientData.Name = "GbClientData";
+            this.GbClientData.Size = new System.Drawing.Size(460, 325);
+            this.GbClientData.TabIndex = 0;
+            this.GbClientData.TabStop = false;
+            this.GbClientData.Text = "Datos del Cliente";
             // 
             // DtpDateOfBirth
             // 
@@ -266,20 +266,20 @@
             this.BtnConfirm.UseVisualStyleBackColor = true;
             this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
-            // groupBox2
+            // GbConfirmData
             // 
-            this.groupBox2.Controls.Add(this.LblStatus);
-            this.groupBox2.Controls.Add(this.TbInterestRate);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.CbCardsTypes);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(12, 344);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(318, 131);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Confirmación de Datos";
+            this.GbConfirmData.Controls.Add(this.LblStatus);
+            this.GbConfirmData.Controls.Add(this.TbInterestRate);
+            this.GbConfirmData.Controls.Add(this.label10);
+            this.GbConfirmData.Controls.Add(this.CbCardsTypes);
+            this.GbConfirmData.Controls.Add(this.label9);
+            this.GbConfirmData.Controls.Add(this.label8);
+            this.GbConfirmData.Location = new System.Drawing.Point(12, 344);
+            this.GbConfirmData.Name = "GbConfirmData";
+            this.GbConfirmData.Size = new System.Drawing.Size(318, 131);
+            this.GbConfirmData.TabIndex = 1;
+            this.GbConfirmData.TabStop = false;
+            this.GbConfirmData.Text = "Confirmación de Datos";
             // 
             // LblStatus
             // 
@@ -354,23 +354,23 @@
             this.ClientSize = new System.Drawing.Size(485, 489);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.BtnNew);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GbConfirmData);
+            this.Controls.Add(this.GbClientData);
             this.Controls.Add(this.BtnConfirm);
             this.Name = "F_enter_data";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar Datos";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.GbClientData.ResumeLayout(false);
+            this.GbClientData.PerformLayout();
+            this.GbConfirmData.ResumeLayout(false);
+            this.GbConfirmData.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GbClientData;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -390,7 +390,7 @@
         private System.Windows.Forms.TextBox TbOtherIncome;
         private System.Windows.Forms.TextBox TbIncome;
         private System.Windows.Forms.Button BtnNew;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox GbConfirmData;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox CbCardsTypes;
         private System.Windows.Forms.Label label9;

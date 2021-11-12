@@ -23,6 +23,8 @@ namespace Clave5_Grupo9
 
     double addInterest;
     double ingresoTotal;
+    double income;
+    double othIcome;
 
     private void BtnConfirm_Click(object sender, EventArgs e)
     {
@@ -43,13 +45,13 @@ namespace Clave5_Grupo9
 
       bool DUIValidate = int.TryParse(TbID.Text, out defaultCustomer.DUI);
       bool phoneValidate = int.TryParse(TbPhone.Text, out defaultCustomer.phoneNumber);
-      bool mainIncome = double.TryParse(TbIncome.Text, out double income);
-      bool otherIncome = double.TryParse(TbOtherIncome.Text, out double othIcome);
+      bool mainIncome = double.TryParse(TbIncome.Text, out income);
+      bool otherIncome = double.TryParse(TbOtherIncome.Text, out othIcome);
       bool rate = double.TryParse(TbInterestRate.Text, out addInterest);
 
       if(!DUIValidate || !phoneValidate || !mainIncome || !otherIncome || !rate) 
       {
-        MessageBox.Show("El DUI, numero de telefono o ingresos deben de ser valores numericos");
+        MessageBox.Show("El DUI, numero de telefono e ingresos deben de ser valores numericos");
         return;
       }
 
@@ -57,7 +59,7 @@ namespace Clave5_Grupo9
 
       if (addInterest < 0.30 || addInterest > 0.40)
       {
-        MessageBox.Show("El monto de interes asignado debe de estar entre el 30% y 40% porciento");
+        MessageBox.Show("El monto de interes asignado debe de estar entre el 30% y 40% por ciento");
         return;
       }
 
@@ -211,20 +213,10 @@ namespace Clave5_Grupo9
     /// <summary> Limpia los inputs o controles </summary>
     private void BtnNew_Click(object sender, EventArgs e)
     {
-      TbFirstName.ResetText();
-      TbLastName.ResetText();
-      TbID.Clear();
-      TbHouse.ResetText();
-      TbNeighborhood.ResetText();
-      TbCity.ResetText();
-      DtpDateOfBirth.ResetText();
-      TbPhone.Clear();
-      TbWorkPlace.ResetText();
-      TbIncome.ResetText();
-      TbOtherIncome.ResetText();
-      CbCardsTypes.ResetText();
-      TbInterestRate.Clear();
-      LblStatus.ResetText();
+        Clear clear = new Clear();
+        clear.clearForm(GbClientData);
+        clear.clearForm(GbConfirmData);
+        LblStatus.Text = "Vacío";
     }
 
     private void btnReturn_Click(object sender, EventArgs e)
