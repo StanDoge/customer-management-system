@@ -227,36 +227,6 @@ namespace Clave5_Grupo9
       LblStatus.ResetText();
     }
 
-
-    /// <summary> Limpia los controles de Forms </summary>
-    public void btnClear_Click(object sender, EventArgs e)
-
-    {
-      foreach (Control ctrl in groupBox1.Controls)
-
-      {
-
-        if (ctrl is TextBox)
-
-        {
-
-          TextBox textBox = (TextBox)ctrl;
-
-          textBox.Text = null;
-
-        }
-
-        if (ctrl is ComboBox)
-
-        {
-
-          ComboBox comboBox = (ComboBox)ctrl;
-
-          comboBox.SelectedIndex = -1;
-        }
-      }
-
-    }
     private void btnReturn_Click(object sender, EventArgs e)
     {
       F_option opción = new F_option();
