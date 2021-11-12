@@ -21,6 +21,7 @@ namespace Clave5_Grupo9
     }
 
 
+    //variables de proceso
     double addInterest;
     double ingresoTotal;
     double income;
@@ -31,8 +32,8 @@ namespace Clave5_Grupo9
 
       //asignacion de la informacion de los input al objeto cliente
 
-      defaultCustomer.fullName = TbFirstName.Text + TbLastName.Text;
-      defaultCustomer.address = TbHouse.Text + TbNeighborhood.Text + TbCity.Text;
+      defaultCustomer.fullName = $"{TbFirstName.Text} {TbLastName.Text}";
+      defaultCustomer.address = $"{TbHouse.Text} {TbNeighborhood.Text} {TbCity.Text}";
       defaultCustomer.birthday = DtpDateOfBirth.Value.Date.ToString("yyyy-MM-dd");
       defaultCustomer.workPlace = TbWorkPlace.Text;
 
@@ -65,71 +66,6 @@ namespace Clave5_Grupo9
 
       int indexOfSelections = CbCardsTypes.SelectedIndex;
 
-      //if (string.IsNullOrEmpty(defaultCustomer.fullName))
-      //{
-      //  MessageBox.Show("Debe insertar el nombre completo");
-      //  return;
-      //}
-
-      //number = int.TryParse(TbID.Text, out defaultCustomer.DUI);
-      //if (!number || string.IsNullOrEmpty(TbID.Text))
-      //{
-      //  MessageBox.Show("El dato ingresado en DUI/ID no es válido o el campo está vacío");
-      //  return;
-      //}
-      //defaultCustomer.DUI = int.Parse((TbID.Text));
-
-      //if (string.IsNullOrEmpty(defaultCustomer.address))
-      //{
-      //  MessageBox.Show("Debe ingresar su dirección completa");
-      //  return;
-      //}
-
-      //if (string.IsNullOrEmpty(defaultCustomer.birthday))
-      //{
-      //  MessageBox.Show("No ha ingresado una fecha de nacimiento");
-      //  return;
-      //}
-
-      //number = int.TryParse(TbPhone.Text, out defaultCustomer.phoneNumber);
-      //if (!number || string.IsNullOrEmpty(TbPhone.Text))
-      //{
-      //  MessageBox.Show("El Teléfono no es válido o el campo está vacío");
-      //  return;
-      //}
-      //defaultCustomer.phoneNumber = int.Parse(TbPhone.Text);
-
-      //if (string.IsNullOrEmpty(defaultCustomer.workPlace))
-      //{
-      //  MessageBox.Show("No ha ingresado un lugar de trabajo");
-      //  return;
-      //}
-
-
-      //number = double.TryParse(TbIncome.Text, out defaultCustomer.totalIncome);
-      //if (!number || string.IsNullOrEmpty(TbIncome.Text))
-      //{
-      //  MessageBox.Show("No ha ingresado un sueldo o ingreso principal");
-      //  return;
-      //}
-
-      //number = double.TryParse(TbOtherIncome.Text, out defaultCustomer.totalIncome);
-      //if (!number || string.IsNullOrEmpty(TbOtherIncome.Text))
-      //{
-      //  MessageBox.Show("El dato ingresado en Otros Ingresos no es válido o el campo está vacío. Ingrese el número cero si no posee otros ingresos");
-      //  return;
-      //}
-      //defaultCustomer.totalIncome = double.Parse(TbIncome.Text) + double.Parse(TbOtherIncome.Text);
-
-      //number = double.TryParse(TbInterestRate.Text, out addInterest);
-      //if (!number || !string.IsNullOrEmpty(TbInterestRate.Text) )
-      //{
-      //      if(addInterest < 0.30 || addInterest > 0.40)
-      //      {
-      //              MessageBox.Show("La tasa de interés no es válida o el campo se encuntra vacío");
-      //              return;
-      //      }
-      //}
 
 
       ///<summary> En este bloque de codigo se valida si el usuario es apto para obtener la categoria de tarjeta seleccionada </summary>

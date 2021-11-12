@@ -21,7 +21,7 @@ namespace Clave5_Grupo9
       insert1.Connection = Form1.conexionBD;
       insert2.Connection = Form1.conexionBD;
       insert3.Connection = Form1.conexionBD;
-      insert1.CommandText = "INSERT INTO customers(full_name,dui,address,birthday,phone,workplace,total_income,state) VALUES ('" + name + "  ','" + DUI + "  ',  '  " + address + "  ',  '  " + birthday + "  ','  " + phone + "  ','  " + workPlace + "  ',  '  " + income + "',  '  " + state + "');";
+      insert1.CommandText = "INSERT INTO customers(full_name,dui,address,birthday,phone,workplace,total_income,state) VALUES ('" + name + " ','  " + DUI + "  ',  '  "  + address +  "   ',  '  " + birthday + "  ','  " + phone + "  ','  " + workPlace + "  ',  '  " + income + "',  '  " + state + "');";
       insert2.CommandText = "INSERT INTO cards(card_type,card_limit,interest_rate,customer_id) VALUES (' " + type.ToString() + "', ' " + cardLimit + "','" + interest + "',last_insert_id() );";
       insert3.CommandText = "INSERT INTO openings(date,customer_id,card_id) VALUES (' " + aperture + "', last_insert_id() , last_insert_id() );";
 
