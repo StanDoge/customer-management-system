@@ -11,6 +11,14 @@ using MySql.Data.MySqlClient;
 
 namespace Clave5_Grupo9
 {
+    /// <summary>
+    /// AUTORES
+    /// Pablo Linqui
+    /// Stanley Melgar
+    /// Cesar Torres
+    /// Version 1.0
+    /// </summary>
+
   public partial class F_search_data : Form
   {
     public F_search_data()
@@ -18,31 +26,39 @@ namespace Clave5_Grupo9
       InitializeComponent();
     }
 
-    //Variables para lbl desde y hasta 
+    /// <summary>
+    /// variables para lbl desde y hasta
+    /// </summary>
     string dateFromSearch;
     string dateToSearch;
     string displayFrom;
     string displayTo;
-    DateTime desde;
-    DateTime hasta;
    
-    //Los botones no se activan hasta que haya algun dato insertado
-    private void F_search_data_Load_1(object sender, EventArgs e)
+         
+    ///<summary>
+    ///Los botones no se activan hasta que haya algun dato insertado
+    ///</summary>
+    
+        private void F_search_data_Load_1(object sender, EventArgs e)
     {
       btnSearch.Enabled = false;
       dtpFromSearch.Value = DateTime.Now;
       dtpToSearch.Value = dtpFromSearch.Value.AddDays(1);
     }
 
-    //fechas en formato ISO 
-    private void dtpFromSearch_ValueChanged(object sender, EventArgs e)
+        ///<summary>
+        ///Fechas en formato ISO
+        ///</summary>
+        private void dtpFromSearch_ValueChanged(object sender, EventArgs e)
     {
       dateFromSearch = dtpFromSearch.Value.Date.ToString("yyyy-MM-dd");        
       btnSearch.Enabled = true;
     }
 
-    //Valida que el rango de fechas sea correcto
-    void validDate()
+        ///<summary>
+        ///Valida que el rango de fechas sea correcto
+        ///</summary>
+        void validDate()
     {
       DateTime a = Convert.ToDateTime(dtpFromSearch.Text);
       DateTime b = Convert.ToDateTime(dtpToSearch.Text);
@@ -71,8 +87,11 @@ namespace Clave5_Grupo9
     }
 
 
-    //valida que haya al menos un campo con datos antes de buscar
-    private void btnSearch_Click(object sender, EventArgs e)
+        ///<summary>
+        ///valida que haya al menos un campo con datos antes de buscar
+        ///</summary>
+
+        private void btnSearch_Click(object sender, EventArgs e)
     {
             if (
                dateFromSearch
@@ -93,7 +112,9 @@ namespace Clave5_Grupo9
                 
 
 
-                //Inicializa una nueva instancia de la clase MySqlCommand.
+                ///<return>
+                ///Conecta la bd
+                ///</return>
                 MySqlCommand consulta = new MySqlCommand();
                 Form1.conexionBD.Open(); //se abre la conexion de la variable global declara en la parte superior del formulario
                                          //Instancia para conexión a MySQL, recibe la cadena de conexión
@@ -121,14 +142,18 @@ namespace Clave5_Grupo9
                 }
             }
     }
-
-    private void Volver_Click(object sender, EventArgs e)
+        ///<summary>
+        ///regresa a form de opciones
+        ///</summary>
+        private void Volver_Click(object sender, EventArgs e)
     {
       F_option opción = new F_option();
       opción.Show();
       Hide();
     }
-
+        ///<summary>
+        ///Muestra toda la base de datos 
+        ///</summary>
     private void btnGetAll_Click(object sender, EventArgs e)
     {
       //Inicializa una nueva instancia de la clase MySqlCommand.
