@@ -11,5 +11,5 @@ The funcionality was divide in three phases, the login that need a password and 
 <p>Form to send data to DB</p>
 
 <image src= "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2a922c31-9a51-4f2f-b3fd-b69d64130629/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211115T033700Z&X-Amz-Expires=86400&X-Amz-Signature=145ac028cc23c3dbdd1e1ff4421818ae5f6eeced7cb70562eec1b36a1e32519e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22" alt = "pull data Form image">
-<p>Form for pull data from DB, also you can use a dates filter to search specifics tuples</p>
+<p>Form to pull data from DB, also you can use a dates filter to search specifics tuples</p>
 </div>
