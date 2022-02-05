@@ -11,5 +11,5 @@ The funcionality was divide in three phases, the login that need a password and 
 <p>Form to send data to DB</p>
 
 <image src= "https://i.imgur.com/ur0mtet.png" alt = "pull data Form image">
-<p>Form to pull data from DB, also you can use a dates filter to search specifics tuples</p>
+<p>Form to pull data from DB, also you can use dates filter to search specifics tuples</p>
 </div>
